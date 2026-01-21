@@ -1,88 +1,86 @@
-# Project 3: Azure Log Analytics & KQL Exploration
+Project 3: Azure Log Analytics & KQL Exploration
+🎯 Objective
+Explore Azure Log Analytics and Kusto Query Language (KQL) to monitor Microsoft 365 tenant activity.
+Learn to visualize failed sign-ins and authentication events using Azure Workbooks for actionable insights.
+This project focuses on:
 
-## Objective
-Explore **Azure Log Analytics** and **Kusto Query Language (KQL)** to monitor Microsoft 365 tenant activity. Learn to visualize failed sign-ins and other authentication events using **workbooks** for actionable insights.
+Building KQL queries
+Interpreting raw logs
+Creating meaningful visualizations for SOC-style monitoring
 
-This project focuses on building queries, interpreting raw logs, and creating visualizations to support SOC-style monitoring scenarios.
 
----
+🧠 Background / Context
+After completing Project 2, my tenant had Conditional Access and MFA policies fully configured.
+The next goal was to begin monitoring the environment using Azure Sentinel (Microsoft Defender for Cloud) and Log Analytics.
+This project helped me understand:
 
-## Background / Context
-After completing Project 2, my tenant had **Conditional Access and MFA policies** in place. I wanted to take the next step: using **Azure Sentinel and Log Analytics** to monitor tenant activity, detect failed sign-ins, and visualize patterns a security operations team might look for.
+How Azure AD, Log Analytics, and Sentinel work together
+How to use KQL to extract meaningful insights
+How to visualize data to detect authentication patterns and anomalies
 
-This project taught me:
-- How Azure AD, Log Analytics, and Sentinel interact  
-- How to use **KQL** to extract meaningful insights from raw log data  
-- How to visualize and interpret authentication trends using **workbooks**
 
----
+🛠️ What I Did
 
-## What I Did
+1️⃣ Log Analytics Workspace Setup
 
-### 1️⃣ Log Analytics Workspace Setup
-- Created a dedicated **resource group** for the project.  
-- Provisioned a **Log Analytics workspace** in Azure.  
-- Connected **Azure Active Directory** and **Azure Monitor** to centralize tenant logs.  
-- Encountered **licensing issues** when trying to enable some data connectors (e.g., Microsoft Defender for Office Purview).  
-  - Learned that certain Defender features require specific license tiers.
+Created a dedicated resource group for the project
+Provisioned a Log Analytics workspace
+Connected:
 
----
+Azure Active Directory
+Azure Monitor
 
-### 2️⃣ Initial KQL Exploration
-Before creating visualizations, I ran some **basic queries** to understand the raw log data:
 
-```kql
-// Latest 20 activities in Azure subscription
-AzureActivity
-| top 20 by TimeGenerated desc
+Ran into licensing limitations when enabling some connectors (e.g., Defender for Office Purview)
 
-// Last 20 Azure AD sign-ins
-SigninLogs
-| top 20 by TimeGenerated desc
+Learned that certain Defender connectors require higher-tier licenses
 
-// User and admin changes in Azure AD
-AuditLogs
-| top 20 by TimeGenerated desc
+
+
+
+2️⃣ Initial KQL Exploration
+Ran basic queries to understand log structure and available data.
+KQL// Latest 20 activities in Azure subscriptionAzureActivity| top 20 by TimeGenerated descShow more lines
+KQL// Last 20 Azure AD sign-insSigninLogs| top 20 by TimeGenerated descShow more lines
+KQL// User and admin changes in Azure ADAuditLogs| top 20 by TimeGenerated descShow more lines
+
 3️⃣ Workbook for Visualization
-Built visualizations to track sign-in attempts, focusing on failed and risky logins.
-Created a bar chart showing failed sign-ins per user over time.
-
-Failed Sign-ins KQL Query:
-
-kql
-Copy code
-SigninLogs
-| where TimeGenerated >= ago(72h)
-| where ResultType != 0  // Failed logins
-| summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName
-| order by TimeGenerated asc
-The chart helped identify patterns and spikes in failed sign-ins.
+Created visualizations to monitor sign-in attempts, focusing on failed and risky authentications.
+Failed Sign-ins Query
+KQLSigninLogs| where TimeGenerated >= ago(72h)| where ResultType != 0  // Failed logins| summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName| order by TimeGenerated ascShow more lines
+This produced a bar chart showing failed sign-ins per user over time, making spikes and patterns easy to identify.
 
 4️⃣ Lessons Learned
-Raw logs are overwhelming: Workbooks and KQL summaries are essential for extracting insights.
 
-Summarization and binning make trends much more visible.
+Raw logs are overwhelming — Workbooks + queries bring clarity
+Summarization and binning make trends visible
+Understanding relationships between:
 
-Understanding how Azure AD sign-ins, audit logs, and activity logs interact is key to building useful dashboards.
+Sign-in logs
+Audit logs
+Azure Activity logs
+is essential for effective monitoring
 
-Licensing matters: some data connectors in Azure Sentinel require specific Microsoft 365 or Defender licenses.
 
-Real-world tenant monitoring requires iteration: queries often need refinement as new patterns or edge cases appear.
+Licensing matters — several connectors require specific Defender / M365 plans
+Monitoring is iterative: KQL queries evolve as new scenarios emerge
+
 
 5️⃣ Next Steps / Improvements
-Create an Analytics rule in Microsoft Defender to trigger a playbook for failed or suspicious sign-ins.
 
-Integrate playbooks to automatically respond to alerts (e.g., send emails, lock accounts, or notify admins).
+Create an Analytics rule in Defender to trigger alerts for suspicious sign-ins
+Integrate automation playbooks to:
 
-Expand workbook visualizations to track trends like:
+Email admins
+Lock risky accounts
+Take automatic remediation steps
 
-Role changes and privilege escalations
 
-MFA failures across user groups
+Expand workbook visualizations to track:
 
-Sign-in anomalies or risky locations
+Role changes / privilege escalations
+MFA failures by user or group
+Risky sign-in locations
 
-Refine KQL queries to reduce noise and highlight actionable events.
 
-yaml
-Copy code
+Refine KQL queries to reduce noise and highlight actionable events
