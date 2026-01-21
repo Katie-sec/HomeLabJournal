@@ -1,40 +1,36 @@
 # Project 3: Azure Log Analytics & KQL Exploration 🎯
 
 ## Objective
-- Explore **Azure Log Analytics** and **Kusto Query Language (KQL)** to monitor Microsoft 365 tenant activity.  
-- Visualize **failed sign-ins** and **authentication events** using **Azure Workbooks** for actionable insights.  
+- Explore Azure Log Analytics and Kusto Query Language (KQL) to monitor Microsoft 365 tenant activity.  
+- Learn to visualize failed sign-ins and authentication events using Azure Workbooks for actionable insights.  
 
 Focus areas:  
 - Building KQL queries  
 - Interpreting raw logs  
 - Creating meaningful visualizations for SOC-style monitoring  
 
----
-
 ## 🧠 Background / Context
-- Tenant had **Conditional Access** and **MFA policies** fully configured.  
-- Goal: Begin monitoring environment using **Azure Sentinel** (Microsoft Defender for Cloud) and **Log Analytics**.  
+- After completing Project 2, my tenant had Conditional Access and MFA policies fully configured.  
+- Next goal: begin monitoring the environment using Azure Sentinel (Microsoft Defender for Cloud) and Log Analytics.  
 
 Key learnings:  
-- How **Azure AD**, **Log Analytics**, and **Sentinel** work together  
-- Using **KQL** to extract meaningful insights  
-- Visualizing data to detect **authentication patterns and anomalies**  
-
----
+- How Azure AD, Log Analytics, and Sentinel work together  
+- How to use KQL to extract meaningful insights  
+- How to visualize data to detect authentication patterns and anomalies  
 
 ## 🛠️ What I Did
 
 ### 1️⃣ Log Analytics Workspace Setup
-- Created dedicated **resource group** for the project  
-- Provisioned **Log Analytics workspace**  
+- Created a dedicated resource group for the project  
+- Provisioned a Log Analytics workspace  
 - Connected:  
-  - **Azure Active Directory**  
-  - **Azure Monitor**  
-- Encountered licensing limitations when enabling some connectors (e.g., **Defender for Office Purview**)  
-- Learned that certain **Defender connectors** require higher-tier licenses  
+  - Azure Active Directory  
+  - Azure Monitor  
+- Ran into licensing limitations when enabling some connectors (e.g., Defender for Office Purview)  
+- Learned that certain Defender connectors require higher-tier licenses  
 
 ### 2️⃣ Initial KQL Exploration
-- Ran basic queries to understand **log structure** and available data:  
+- Ran basic queries to understand log structure and available data:
 
 ```kql
 // Latest 20 activities in Azure subscription
@@ -49,7 +45,7 @@ SigninLogs
 ADAuditLogs
 | top 20 by TimeGenerated desc
 3️⃣ Workbook for Visualization
-Created visualizations to monitor sign-in attempts, focusing on failed and risky authentications
+Created visualizations to monitor sign-in attempts, focusing on failed and risky authentications.
 
 Failed Sign-ins Query:
 
@@ -60,9 +56,7 @@ SigninLogs
 | where ResultType != 0 // Failed logins
 | summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName
 | order by TimeGenerated asc
-Generated bar chart showing failed sign-ins per user over time
-
-Visualized spikes and patterns for actionable insights
+Produced a bar chart showing failed sign-ins per user over time, making spikes and patterns easy to identify.
 
 4️⃣ Lessons Learned
 Raw logs are overwhelming — Workbooks + queries bring clarity
@@ -83,7 +77,7 @@ Licensing matters — several connectors require specific Defender / M365 plans
 Monitoring is iterative: KQL queries evolve as new scenarios emerge
 
 5️⃣ Next Steps / Improvements
-Create Analytics rule in Defender to trigger alerts for suspicious sign-ins
+Create an Analytics rule in Defender to trigger alerts for suspicious sign-ins
 
 Integrate automation playbooks to:
 
@@ -102,3 +96,5 @@ MFA failures by user or group
 Risky sign-in locations
 
 Refine KQL queries to reduce noise and highlight actionable events
+
+Screenshot
