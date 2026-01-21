@@ -69,6 +69,8 @@ SigninLogs
 The chart helped identify patterns and spikes in failed sign-ins.
 
 </details> <!-- End of collapsible -->
+
+
 4️⃣ Lessons Learned
 
 Raw logs are overwhelming: Workbooks and KQL summaries are essential for extracting insights.
