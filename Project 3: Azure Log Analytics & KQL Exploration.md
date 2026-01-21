@@ -95,11 +95,16 @@ Copy code
 - **Summarization and binning** make trends much more visible.  
 - Understanding how **Azure AD sign-ins, audit logs, and activity logs** interact is key to building useful dashboards.  
 - **Licensing matters**: some data connectors in Azure Sentinel require specific Microsoft 365 or Defender licenses.  
-- Real-world tenant monitoring requires **iteration**: queries often need refinement as new patterns or edge cases appear.  
+- Real-world tenant monitoring requires **iteration**: queries often need refinement as new patterns or edge cases appear.
 
 ---
 
 ### 5️⃣ Next Steps / Improvements
-- Create Analytics rule in Defender to trigger a Playbook
-- Integrate playbooks to automatically respond to alerts (e.g., failed sign-ins).  
+- Create an **Analytics rule in Microsoft Defender** to trigger a playbook for failed or suspicious sign-ins.  
+- Integrate **playbooks** to automatically respond to alerts (e.g., send emails, lock accounts, or notify admins).  
+- Expand **workbook visualizations** to track trends like:
+  - Role changes and privilege escalations  
+  - MFA failures across user groups  
+  - Sign-in anomalies or risky locations  
+- Refine **KQL queries** to reduce noise and highlight actionable events.
 
