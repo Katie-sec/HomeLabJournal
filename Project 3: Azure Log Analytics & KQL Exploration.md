@@ -89,6 +89,7 @@ Copy code
 
 ---
 
+
 ### 4️⃣ Lessons Learned
 - **Raw logs are overwhelming**: Workbooks and KQL summaries are essential for extracting insights.  
 - **Summarization and binning** make trends much more visible.  
@@ -99,11 +100,6 @@ Copy code
 ---
 
 ### 5️⃣ Next Steps / Improvements
-- Integrate **playbooks** to automatically respond to alerts (e.g., failed sign-ins, suspicious logins).  
-- Explore **conditional formatting** in workbooks for high-severity events.  
-- Build additional **KQL queries** for:
-  - Role changes and privilege escalations  
-  - MFA failures across different user groups  
-  - Sign-in anomalies or risky locations  
+- Create Analytics rule in Defender to trigger a Playbook
+- Integrate playbooks to automatically respond to alerts (e.g., failed sign-ins).  
 
-- Expand dashboards for **SOC-style monitoring**, making it easier to spot patterns at a glance.
