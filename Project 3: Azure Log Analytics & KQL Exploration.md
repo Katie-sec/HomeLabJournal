@@ -34,6 +34,7 @@ Key learnings:
 ---
 
 ### 2️⃣ Initial KQL Exploration
+
 - Ran basic queries to understand log structure and available data:
 
 ```kql
@@ -52,6 +53,7 @@ ADAuditLogs
 ---
 
 3️⃣ Workbook for Visualization
+
 Created visualizations to monitor sign-in attempts, focusing on failed and risky authentications.
 Failed Sign-ins Query
 KQLSigninLogs| where TimeGenerated >= ago(72h)| where ResultType != 0  // Failed logins| summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName| order by TimeGenerated ascShow more lines
