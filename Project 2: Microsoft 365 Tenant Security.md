@@ -38,9 +38,6 @@ While configuring MFA via a Conditional Access policy, I encountered issues that
 ### 2️⃣ Conditional Access & MFA Policy
 - Configured **Conditional Access policies** to enforce MFA across the tenant.  
 - Encountered **conflicts with pre-existing Microsoft MFA policies**, which caused the sign-in loop.  
-- Key discoveries:
-  - **Global administrators cannot bypass MFA**, even when PIM is enabled.  
-  - **Standard users** can bypass MFA via properly configured exclusion groups.  
 - Created an **MFA exclusion group** for testing, and confirmed that standard accounts could bypass MFA when included.  
 - Key takeaways:
   - Always **test policies on non-admin users** before enforcing them tenant-wide.  
@@ -52,6 +49,6 @@ While configuring MFA via a Conditional Access policy, I encountered issues that
 
 ## Outcome
 - Break-glass admin account ensured access even during misconfigurations.  
-- Conditional Access policies successfully applied without causing admin lockouts.  
+- Conditional Access policy successfully applied   
 - Gained practical experience in troubleshooting MFA issues and understanding Azure AD authentication flows.  
 - Prepared the tenant for future exploration of **Azure Sentinel and Log Analytics**, to monitor and visualize authentication events in subsequent projects.
