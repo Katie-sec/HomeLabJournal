@@ -1,5 +1,5 @@
 ## Projects / Labs
-# Project 2: Microsoft 365 Tenant Security 
+# Project 2: Microsoft 365 Tenant Security .
 
 ## Objective
 Build a secure Microsoft 365 tenant environment, implement Conditional Access (CA) and Multi-Factor Authentication (MFA) policies
