@@ -64,6 +64,7 @@ SigninLogs
 | where ResultType != 0
 | summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName
 | order by TimeGenerated asc
+
 </details>
 The chart helped identify patterns and spikes in failed sign-ins.
 
