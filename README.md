@@ -34,6 +34,7 @@ This repository is intended to document my personal IT and cybersecurity home la
 ## Projects / Labs
 
 [Project 1: Microsoft Tenant Setup & Entra PIM Implementation](Project-1-Microsoft-Tenant-Entra-PIM.md)
+
 [Project 2: Microsoft 365 Tenant Security](Project-2-Microsoft-365-Tenant-Security.md)
 
 
