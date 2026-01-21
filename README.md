@@ -43,9 +43,6 @@ Currently experimenting with:
 /Notes
 /Lab_Journals
 
-yaml
-Copy code
-
 Each folder may contain:  
 - Notes on setup and configuration  
 - Scripts or snippets used  
