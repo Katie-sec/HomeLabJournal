@@ -87,9 +87,6 @@ Copy code
 
 </details>
 
----
-
-
 ### 4️⃣ Lessons Learned
 - **Raw logs are overwhelming**: Workbooks and KQL summaries are essential for extracting insights.  
 - **Summarization and binning** make trends much more visible.  
@@ -107,4 +104,3 @@ Copy code
   - MFA failures across user groups  
   - Sign-in anomalies or risky locations  
 - Refine **KQL queries** to reduce noise and highlight actionable events.
-
