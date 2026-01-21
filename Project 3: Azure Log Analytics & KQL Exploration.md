@@ -9,6 +9,8 @@ Focus areas:
 - Interpreting raw logs  
 - Creating meaningful visualizations for SOC-style monitoring  
 
+---
+
 ## 🧠 Background / Context
 - After completing Project 2, my tenant had Conditional Access and MFA policies fully configured.  
 - Next goal: begin monitoring the environment using Azure Sentinel (Microsoft Defender for Cloud) and Log Analytics.  
@@ -17,6 +19,8 @@ Key learnings:
 - How Azure AD, Log Analytics, and Sentinel work together  
 - How to use KQL to extract meaningful insights  
 - How to visualize data to detect authentication patterns and anomalies  
+
+---
 
 ## 🛠️ What I Did
 
@@ -32,20 +36,16 @@ Key learnings:
 ### 2️⃣ Initial KQL Exploration
 - Ran basic queries to understand log structure and available data:
 
-// Latest 20 activities in Azure subscription
 ```kql
+// Latest 20 activities in Azure subscription
 AzureActivity
 | top 20 by TimeGenerated desc
-// Last 20 Azure AD sign-ins
 
-kql
-Copy code
+// Last 20 Azure AD sign-ins
 SigninLogs
 | top 20 by TimeGenerated desc
-// User and admin changes in Azure AD
 
-kql
-Copy code
+// User and admin changes in Azure AD
 ADAuditLogs
 | top 20 by TimeGenerated desc
 3️⃣ Workbook for Visualization
@@ -100,3 +100,5 @@ MFA failures by user or group
 Risky sign-in locations
 
 Refine KQL queries to reduce noise and highlight actionable events
+
+Screenshot
