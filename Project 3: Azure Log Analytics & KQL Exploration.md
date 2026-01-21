@@ -55,12 +55,13 @@ Built visualizations to track sign-in attempts, focusing on failed and risky log
 
 Created a bar chart showing failed sign-ins per user over time.
 
-<details> <summary>Failed Sign-ins KQL Query (click to expand)</summary>
-kql
-Copy code
+<details>
+<summary>Failed Sign-ins KQL Query (click to expand)</summary>
+
+```kql
 SigninLogs
 | where TimeGenerated >= ago(72h)
-| where ResultType != 0  // Failed logins
+| where ResultType != 0
 | summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName
 | order by TimeGenerated asc
 </details>
