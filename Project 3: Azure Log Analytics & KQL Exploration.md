@@ -69,18 +69,23 @@ The chart helped identify patterns and spikes in failed sign-ins.
 
 ---
 
-## 4️⃣ Lessons Learned
+<details>
+<summary>Click to expand detailed lessons learned</summary>
 
 - **Raw logs are overwhelming**: Workbooks and KQL summaries are essential for extracting insights.  
 - **Summarization and binning** make trends much more visible.  
 - Understanding how **Azure AD sign-ins, audit logs, and activity logs** interact is key to building useful dashboards.  
-  ![Screenshot](https://github.com/user-attachments/assets/751bc34c-685e-4c47-9acf-f9b883841480)  
 - **Licensing matters**: some data connectors in Azure Sentinel require specific Microsoft 365 or Defender licenses.  
 - Real-world tenant monitoring requires **iteration**: queries often need refinement as new patterns or edge cases appear.
+
+</details>
 
 ---
 
 ## 5️⃣ Next Steps / Improvements
+
+<details>
+<summary>Click to expand next steps</summary>
 
 - Create an **Analytics rule in Microsoft Defender** to trigger a playbook for failed or suspicious sign-ins.  
 - Integrate **playbooks** to automatically respond to alerts (e.g., send emails, lock accounts, or notify admins).  
@@ -89,3 +94,5 @@ The chart helped identify patterns and spikes in failed sign-ins.
   - MFA failures across user groups  
   - Sign-in anomalies or risky locations  
 - Refine **KQL queries** to reduce noise and highlight actionable events.
+
+</details>
