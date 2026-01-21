@@ -69,7 +69,7 @@ The chart helped identify patterns and spikes in failed sign-ins.
 
 ---
 
-### 4️⃣ Lessons Learned
+## 4️⃣ Lessons Learned
 - **Raw logs are overwhelming**: Workbooks and KQL summaries are essential for extracting insights.  
 - **Summarization and binning** make trends much more visible.  
 - Understanding how **Azure AD sign-ins, audit logs, and activity logs** interact is key to building useful dashboards.  
@@ -78,7 +78,7 @@ The chart helped identify patterns and spikes in failed sign-ins.
 
 ---
 
-### 5️⃣ Next Steps / Improvements
+## 5️⃣ Next Steps / Improvements
 - Create an **Analytics rule in Microsoft Defender** to trigger a playbook for failed or suspicious sign-ins.  
 - Integrate **playbooks** to automatically respond to alerts (e.g., send emails, lock accounts, or notify admins).  
 - Expand **workbook visualizations** to track trends like:
