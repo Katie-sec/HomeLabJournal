@@ -33,7 +33,6 @@ This repo is intended to document my personal IT and cybersecurity home lab expe
 
 ## Projects / Labs
 Currently experimenting with:  
-
 /Azure
 /VM_Setup
 /SIEM_Playbooks
