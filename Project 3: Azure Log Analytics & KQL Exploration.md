@@ -60,7 +60,7 @@ Failed Sign-ins Query
 KQLSigninLogs| where TimeGenerated >= ago(72h)| where ResultType != 0  // Failed logins| summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName| order by TimeGenerated ascShow more lines
 This produced a bar chart showing failed sign-ins per user over time, making spikes and patterns easy to identify.
 
-<img width="1007" height="628" alt="Screenshot 2026-01-21 213250" src="https://github.com/user-attachments/assets/920b6948-7ad3-4b30-a760-bf45f499d3d7" />
+![Failed Sign-ins Screenshot](https://github.com/user-attachments/assets/920b6948-7ad3-4b30-a760-bf45f499d3d7)
 
 4️⃣ Lessons Learned
 
