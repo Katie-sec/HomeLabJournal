@@ -1,3 +1,4 @@
+## Projects / Labs
 # Project 2: Microsoft 365 Tenant Security 
 
 ## Objective
