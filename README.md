@@ -18,7 +18,7 @@ This repository contains my personal cybersecurity and IT home lab experiments, 
 
 
 ## Purpose
-This repo is intended to document my personal IT and cybersecurity home lab experiments. It helps me track learning, troubleshoot issues, and reflect on lessons learned.
+This repository is intended to document my personal IT and cybersecurity home lab experiments. It helps me track learning, troubleshoot issues, and reflect on lessons learned.
 
 ---
 
