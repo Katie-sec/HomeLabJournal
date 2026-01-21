@@ -1,4 +1,6 @@
-# Microsoft 365 & Entra PIM Lab
+## Projects / Labs
+
+- [Project 1: Microsoft 365 Tenant Setup & Entra PIM Implementation]
 
 ## Objective
 To set up a Microsoft 365 tenant using a custom domain and correctly implement Privileged Identity Management (PIM) by following least-privilege principles.
