@@ -9,7 +9,7 @@
 
 ## Background / Context
 - After completing Project 2, my tenant had Conditional Access and MFA policies fully configured.  
-- Next goal: begin monitoring the environment using Azure Sentinel (Microsoft Defender for Cloud) and Log Analytics.  
+- Next goal: begin monitoring the environment using Microsoft Sentinel and Log Analytics.  
 
 ---
 
@@ -23,6 +23,7 @@ Key learnings:
 ## What I Did
 
 ### 1️⃣ Log Analytics Workspace Setup
+
 - Created a dedicated resource group for the project  
 - Provisioned a Log Analytics workspace  
 - Connected:  
@@ -59,17 +60,9 @@ Failed Sign-ins Query
 KQLSigninLogs| where TimeGenerated >= ago(72h)| where ResultType != 0  // Failed logins| summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName| order by TimeGenerated ascShow more lines
 This produced a bar chart showing failed sign-ins per user over time, making spikes and patterns easy to identify.
 
+![Screenshot](https://github.com/user-attachments/assets/751bc34c-685e-4c47-9acf-f9b883841480)
+
 4️⃣ Lessons Learned
-
-Raw logs are overwhelming — Workbooks + queries bring clarity
-Summarization and binning make trends visible
-Understanding relationships between:
-
-Sign-in logs
-Audit logs
-Azure Activity logs
-is essential for effective monitoring
-
 
 Licensing matters — several connectors require specific Defender / M365 plans
 Monitoring is iterative: KQL queries evolve as new scenarios emerge
@@ -80,16 +73,12 @@ Monitoring is iterative: KQL queries evolve as new scenarios emerge
 Create an Analytics rule in Defender to trigger alerts for suspicious sign-ins
 Integrate automation playbooks to:
 
-Email admins
-Lock risky accounts
-Take automatic remediation steps
-
+Email admins regarding incident
 
 Expand workbook visualizations to track:
 
 Role changes / privilege escalations
 MFA failures by user or group
 Risky sign-in locations
-
 
 Refine KQL queries to reduce noise and highlight actionable events
