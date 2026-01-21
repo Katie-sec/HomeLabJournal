@@ -82,6 +82,7 @@ SigninLogs
 ![Failed Sign-ins over last 72 hours](./images/project3_failed_signins.png)
 
 </details>
+
 The chart helped identify patterns and spikes in failed sign-ins.
 
 
