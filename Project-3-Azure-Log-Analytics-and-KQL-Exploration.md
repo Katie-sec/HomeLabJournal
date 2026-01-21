@@ -1,5 +1,5 @@
 ## Projects / Labs
-# Project 3: Microsoft 365 Tenant Security 
+# Project 3: Azure Log Analytics & KQL Exploration 🎯
 
 ## Objective
 - Explore Azure Log Analytics and Kusto Query Language (KQL) to monitor Microsoft 365 tenant activity.  
