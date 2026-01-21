@@ -1,5 +1,3 @@
-## Projects / Labs
-
 # Project 3: Azure Log Analytics & KQL Exploration
 
 ## Objective
@@ -49,39 +47,46 @@ SigninLogs
 AuditLogs
 | top 20 by TimeGenerated desc
 </details>
-
 3️⃣ Workbook for Visualization
 Built visualizations to track sign-in attempts, focusing on failed and risky logins.
-
 Created a bar chart showing failed sign-ins per user over time.
 
-<details>
-<summary>Failed Sign-ins KQL Query (click to expand)</summary>
-
-```kql
+<details> <summary>Failed Sign-ins KQL Query (click to expand)</summary>
+kql
+Copy code
 SigninLogs
 | where TimeGenerated >= ago(72h)
-| where ResultType != 0
+| where ResultType != 0  // Failed logins
 | summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName
 | order by TimeGenerated asc
-
 </details>
 The chart helped identify patterns and spikes in failed sign-ins.
 
-</details>
 
-### 4️⃣ Lessons Learned
-- **Raw logs are overwhelming**: Workbooks and KQL summaries are essential for extracting insights.
-- **Summarization and binning** make trends much more visible.
-- Understanding how **Azure AD sign-ins, audit logs, and activity logs** interact is key to building useful dashboards.
-- **Licensing matters**: some data connectors in Azure Sentinel require specific Microsoft 365 or Defender licenses.
-- Real-world tenant monitoring requires **iteration**: queries often need refinement as new patterns or edge cases appear.
+4️⃣ Lessons Learned
+Raw logs are overwhelming: Workbooks and KQL summaries are essential for extracting insights.
 
-### 5️⃣ Next Steps / Improvements
-- Create an **Analytics rule in Microsoft Defender** to trigger a playbook for failed or suspicious sign-ins.
-- Integrate **playbooks** to automatically respond to alerts (e.g., send emails, lock accounts, or notify admins).
-- Expand **workbook visualizations** to track trends like:
-  - Role changes and privilege escalations
-  - MFA failures across user groups
-  - Sign-in anomalies or risky locations
-- Refine **KQL queries** to reduce noise and highlight actionable events.
+Summarization and binning make trends much more visible.
+
+Understanding how Azure AD sign-ins, audit logs, and activity logs interact is key to building useful dashboards.
+
+Licensing matters: some data connectors in Azure Sentinel require specific Microsoft 365 or Defender licenses.
+
+Real-world tenant monitoring requires iteration: queries often need refinement as new patterns or edge cases appear.
+
+5️⃣ Next Steps / Improvements
+Create an Analytics rule in Microsoft Defender to trigger a playbook for failed or suspicious sign-ins.
+
+Integrate playbooks to automatically respond to alerts (e.g., send emails, lock accounts, or notify admins).
+
+Expand workbook visualizations to track trends like:
+
+Role changes and privilege escalations
+
+MFA failures across user groups
+
+Sign-in anomalies or risky locations
+
+Refine KQL queries to reduce noise and highlight actionable events.
+
+
