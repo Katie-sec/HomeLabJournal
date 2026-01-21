@@ -53,6 +53,7 @@ These queries returned raw log entries, including successful and failed sign-ins
 Interpreting trends directly from raw logs was challenging due to the volume and structure of the data.
 
 </details>
+
 3️⃣ Workbook for Visualization
 To better understand the data, I created a workbook in Azure Sentinel:
 
@@ -79,6 +80,9 @@ SigninLogs
 - This visualization made it **much easier to spot patterns and spikes** in failed sign-ins.  
 
 ![Failed Sign-ins over last 72 hours](./images/project3_failed_signins.png)
+
+</details>
+The chart helped identify patterns and spikes in failed sign-ins.
 
 
 ### 4️⃣ Lessons Learned
