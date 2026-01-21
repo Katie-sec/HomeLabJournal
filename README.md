@@ -27,7 +27,7 @@ This repository is intended to document my personal IT and cybersecurity home la
 - **Cybersecurity:** Monitoring failed logins in Azure, experimenting with MFA, creating simple automation playbooks  
 - **Networking:** Static IP configuration for home devices  
 - **Scripting & Automation:** Basic PowerShell snippets for alerts  
-- **Documentation & Reporting:** Markdown journaling of lab experiments  
+- **Documentation & Reporting:** Journaling of lab experiments  
 
 ---
 
