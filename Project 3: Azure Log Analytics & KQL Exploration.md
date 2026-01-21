@@ -46,22 +46,28 @@ SigninLogs
 // User and admin changes in Azure AD
 AuditLogs
 | top 20 by TimeGenerated desc
+
 </details>
+
+---
+
 3️⃣ Workbook for Visualization
 Built visualizations to track sign-in attempts, focusing on failed and risky logins.
 Created a bar chart showing failed sign-ins per user over time.
 
 <details> <summary>Failed Sign-ins KQL Query (click to expand)</summary>
-kql
-Copy code
+
 SigninLogs
 | where TimeGenerated >= ago(72h)
 | where ResultType != 0  // Failed logins
 | summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName
 | order by TimeGenerated asc
+
 </details>
+
 The chart helped identify patterns and spikes in failed sign-ins.
 
+---
 
 4️⃣ Lessons Learned
 Raw logs are overwhelming: Workbooks and KQL summaries are essential for extracting insights.
@@ -73,6 +79,8 @@ Understanding how Azure AD sign-ins, audit logs, and activity logs interact is k
 Licensing matters: some data connectors in Azure Sentinel require specific Microsoft 365 or Defender licenses.
 
 Real-world tenant monitoring requires iteration: queries often need refinement as new patterns or edge cases appear.
+
+---
 
 5️⃣ Next Steps / Improvements
 Create an Analytics rule in Microsoft Defender to trigger a playbook for failed or suspicious sign-ins.
