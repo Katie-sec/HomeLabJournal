@@ -47,8 +47,6 @@ SigninLogs
 AuditLogs
 | top 20 by TimeGenerated desc
 
-</details>
-
 ---
 
 3️⃣ Workbook for Visualization
