@@ -15,7 +15,6 @@ While configuring MFA via a Conditional Access policy, I encountered issues that
 ## What I Did
 
 ### 1️⃣ Break-Glass Admin Account
-### 1️⃣ Break-Glass Admin Account
 - Created an **emergency global admin account** to prevent tenant lockouts.  
 
 - I had already enabled MFA when initially setting up my Microsoft 365 tenant, but it **slipped my mind**. When I created a **Conditional Access policy for MFA**, I ended up duplicating the setup, which caused multiple conflicting prompts:
