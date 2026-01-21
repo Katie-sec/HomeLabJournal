@@ -32,16 +32,20 @@ Key learnings:
 ### 2️⃣ Initial KQL Exploration
 - Ran basic queries to understand log structure and available data:
 
-```kql
 // Latest 20 activities in Azure subscription
+```kql
 AzureActivity
 | top 20 by TimeGenerated desc
-
 // Last 20 Azure AD sign-ins
+
+kql
+Copy code
 SigninLogs
 | top 20 by TimeGenerated desc
-
 // User and admin changes in Azure AD
+
+kql
+Copy code
 ADAuditLogs
 | top 20 by TimeGenerated desc
 3️⃣ Workbook for Visualization
@@ -96,5 +100,3 @@ MFA failures by user or group
 Risky sign-in locations
 
 Refine KQL queries to reduce noise and highlight actionable events
-
-Screenshot
