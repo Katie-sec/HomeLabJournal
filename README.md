@@ -55,7 +55,7 @@ Each folder may contain:
 - Browse folders by topic or project.  
 - Read the Markdown files for step-by-step notes.  
 - Use scripts or configs as reference (do **not** use in production environments without testing).  
-- Updates are tracked via commits—see the history for progression.  
+- Updates are tracked via commits, see the history for progression.  
 
 ---
 
