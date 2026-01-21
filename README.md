@@ -37,6 +37,7 @@ This repository is intended to document my personal IT and cybersecurity home la
 
 [Project 2: Microsoft 365 Tenant Security](Project-2-Microsoft-365-Tenant-Security.md)
 
+[Project 3: Azure Log Analytics & KQL Exploration](Project%203:%20Azure%20Log%20Analytics%20&%20KQL%20Exploration.md)
 
 - ---
 
