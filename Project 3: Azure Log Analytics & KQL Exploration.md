@@ -88,5 +88,3 @@ MFA failures across user groups
 Sign-in anomalies or risky locations
 
 Refine KQL queries to reduce noise and highlight actionable events.
-
-
