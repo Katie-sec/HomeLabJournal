@@ -19,7 +19,7 @@ This resulted in limited control over tenant configuration and role management.
 ### 1. Domain & Tenant Setup
 - Purchased a domain through GoDaddy.
 - Purchased a Microsoft 365 Essentials licence via GoDaddy (mistake).
-- Discovered that this prevented direct tenant configuration.
+- Discovered that this prevented direct tenant configuration with Microsoft directly.
 - Contacted GoDaddy support and requested the domain be **released**.
 - Successfully joined the domain directly to Microsoft 365 and managed the tenant through Microsoft.
 
@@ -82,5 +82,5 @@ This resulted in limited control over tenant configuration and role management.
 
 ## Next Improvements
 - Create a break-glass emergency access account.
-- Apply PIM to additional privileged roles.
+- Configure MFA as a CA policy
 - Enable logging and alerting for role activation events.
