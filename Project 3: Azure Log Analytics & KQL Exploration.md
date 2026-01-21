@@ -51,59 +51,43 @@ ADAuditLogs
 
 ---
 
-### 3️⃣ Workbook for Visualization
-- Created visualizations to monitor sign-in attempts, focusing on failed and risky authentications.
+3️⃣ Workbook for Visualization
+Created visualizations to monitor sign-in attempts, focusing on failed and risky authentications.
+Failed Sign-ins Query
+KQLSigninLogs| where TimeGenerated >= ago(72h)| where ResultType != 0  // Failed logins| summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName| order by TimeGenerated ascShow more lines
+This produced a bar chart showing failed sign-ins per user over time, making spikes and patterns easy to identify.
 
-Failed Sign-ins Query:
+4️⃣ Lessons Learned
 
-SigninLogs
-| where TimeGenerated >= ago(72h)
-| where ResultType != 0 // Failed logins
-| summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName
-| order by TimeGenerated asc
-
-Produced a bar chart showing failed sign-ins per user over time, making spikes and patterns easy to identify.
-
----
-
-### 4️⃣ Lessons Learned
 Raw logs are overwhelming — Workbooks + queries bring clarity
-
 Summarization and binning make trends visible
-
 Understanding relationships between:
 
 Sign-in logs
-
 Audit logs
-
 Azure Activity logs
 is essential for effective monitoring
 
-Licensing matters — several connectors require specific Defender / M365 plans
 
+Licensing matters — several connectors require specific Defender / M365 plans
 Monitoring is iterative: KQL queries evolve as new scenarios emerge
 
----
 
-### 5️⃣ Next Steps / Improvements
+5️⃣ Next Steps / Improvements
 
 Create an Analytics rule in Defender to trigger alerts for suspicious sign-ins
-
 Integrate automation playbooks to:
 
 Email admins
-
 Lock risky accounts
-
 Take automatic remediation steps
+
 
 Expand workbook visualizations to track:
 
 Role changes / privilege escalations
-
 MFA failures by user or group
-
 Risky sign-in locations
+
 
 Refine KQL queries to reduce noise and highlight actionable events
