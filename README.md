@@ -33,7 +33,10 @@ This repository is intended to document my personal IT and cybersecurity home la
 
 ## Projects / Labs
 
-- [Project 1: Microsoft Tenant Setup & Entra PIM Implementation](Microsoft365-PIM.md)
+[Project 1: Microsoft Tenant Setup & Entra PIM Implementation](Microsoft365-PIM.md)
+
+
+- ---
 
 ## Repository Structure
 This repository is organised by technology and project area. Each project has its own Markdown file, with supporting folders for scripts and notes.
