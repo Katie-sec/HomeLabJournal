@@ -77,9 +77,7 @@ Monitoring is iterative: KQL queries evolve as new scenarios emerge
 5. Next Steps / Improvements
 
 Create an Analytics rule in Defender to trigger alerts for suspicious sign-ins
-Integrate automation playbooks to:
-
-Email admins regarding incident
+Integrate automation playbooks to: Email admins regarding incident
 
 Expand workbook visualizations to track:
 
