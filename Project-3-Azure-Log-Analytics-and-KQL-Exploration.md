@@ -56,11 +56,14 @@ ADAuditLogs
 3️⃣ Workbook for Visualization
 
 Created visualizations to monitor sign-in attempts, focusing on failed and risky authentications.
-Failed Sign-ins Query
+
+Failed Sign-ins Query:
+
 KQLSigninLogs| where TimeGenerated >= ago(72h)| where ResultType != 0  // Failed logins| summarize FailedSignins = count() by bin(TimeGenerated, 1h), UserPrincipalName| order by TimeGenerated ascShow more lines
+
 This produced a bar chart showing failed sign-ins per user over time, making spikes and patterns easy to identify.
 
-![Failed Sign-ins Screenshot](https://github.com/user-attachments/assets/920b6948-7ad3-4b30-a760-bf45f499d3d7)
+https://github.com/user-attachments/assets/920b6948-7ad3-4b30-a760-bf45f499d3d7
 
 4️⃣ Lessons Learned
 
