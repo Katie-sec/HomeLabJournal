@@ -24,7 +24,7 @@ This repository is intended to document my personal IT and cybersecurity home la
 
 ## Skills Demonstrated
 - **Cloud & Virtualization:** Basic Azure fundamentals, simple VM setup experiments  
-- **Cybersecurity:** Monitoring failed logins in Azure, experimenting with MFA, creating simple automation playbooks  
+- **Cybersecurity:** Monitoring failed logins in Azure, experimenting with MFA Conditional Access policies, creating simple automation playbooks  
 - **Networking:** Static IP configuration for home devices  
 - **Scripting & Automation:** Basic PowerShell snippets for alerts  
 - **Documentation & Reporting:** Journaling of lab experiments  
@@ -42,7 +42,7 @@ This repository is intended to document my personal IT and cybersecurity home la
 - ---
 
 ## Repository Structure
-This repository is organised by technology and project area. Each project has its own Markdown file, with supporting folders for scripts and notes.
+Each project has its own Markdown file, with supporting folders for scripts and notes.
 
 Currently experimenting with:  
 /Azure
