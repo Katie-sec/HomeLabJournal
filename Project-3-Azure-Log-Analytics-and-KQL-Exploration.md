@@ -65,11 +65,14 @@ This produced a bar chart showing failed sign-ins per user over time, making spi
 
 https://github.com/user-attachments/assets/920b6948-7ad3-4b30-a760-bf45f499d3d7
 
+---
+
 4. Lessons Learned
 
 Licensing matters — several connectors require specific Defender / M365 plans
 Monitoring is iterative: KQL queries evolve as new scenarios emerge
 
+---
 
 5. Next Steps / Improvements
 
