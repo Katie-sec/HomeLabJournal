@@ -49,11 +49,8 @@ Currently experimenting with:
 /VM_Setup
 /SIEM_Playbooks
 /Linux
-/Firewall_Configs
 /Scripts
 /PowerShell
-/Notes
-/Lab_Journals
 
 Each folder may contain:  
 - Notes on setup and configuration  
