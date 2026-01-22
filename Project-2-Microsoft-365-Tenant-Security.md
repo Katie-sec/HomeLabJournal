@@ -26,7 +26,7 @@ While configuring MFA via a Conditional Access policy, I encountered issues that
 
 - After signing out, I encountered a **sign-in loop**: the system continuously prompted for MFA, but completing the steps always returned an error.  
 
-- I then tried to use a **secondary global admin account** to revert the change, but the sign-in was blocked due to the MFA misconfiguration. Interestingly, my **break-glass admin account** didn’t require re-setting up MFA—likely because it was an intermittent issue that accepted the original sign-in. This clearly demonstrated why having a **break-glass account** is critical.  
+- I then tried to use a **secondary global admin account** to revert the change, but the sign-in was blocked due to the MFA misconfiguration. Interestingly, my **break-glass admin account** didn’t require re-setting up MFA, likely because it was an intermittent issue that accepted the original sign-in. This clearly demonstrated why having a **break-glass account** is critical.  
 
 - I headed over to **authentication methods** and removed both the **software OATH token** and **Microsoft Authenticator** entries so that the account would default to my Conditional Access policy. This resolved the error and allowed me to regain control of my primary account.  
 
