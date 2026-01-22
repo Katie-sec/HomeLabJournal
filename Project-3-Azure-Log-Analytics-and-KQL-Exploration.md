@@ -22,7 +22,7 @@ Key learnings:
 
 ## What I Did
 
-### 1️⃣ Log Analytics Workspace Setup
+### 1. Log Analytics Workspace Setup
 
 - Created a dedicated resource group for the project  
 - Provisioned a Log Analytics workspace  
@@ -34,7 +34,7 @@ Key learnings:
 
 ---
 
-### 2️⃣ Initial KQL Exploration
+### 2. Initial KQL Exploration
 
 - Ran basic queries to understand log structure and available data:
 
@@ -53,7 +53,7 @@ ADAuditLogs
 
 ---
 
-3️⃣ Workbook for Visualization
+3️. Workbook for Visualization
 
 Created visualizations to monitor sign-in attempts, focusing on failed and risky authentications.
 
@@ -65,13 +65,13 @@ This produced a bar chart showing failed sign-ins per user over time, making spi
 
 https://github.com/user-attachments/assets/920b6948-7ad3-4b30-a760-bf45f499d3d7
 
-4️⃣ Lessons Learned
+4. Lessons Learned
 
 Licensing matters — several connectors require specific Defender / M365 plans
 Monitoring is iterative: KQL queries evolve as new scenarios emerge
 
 
-5️⃣ Next Steps / Improvements
+5. Next Steps / Improvements
 
 Create an Analytics rule in Defender to trigger alerts for suspicious sign-ins
 Integrate automation playbooks to:
