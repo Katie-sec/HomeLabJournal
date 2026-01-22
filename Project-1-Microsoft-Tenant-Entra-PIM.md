@@ -12,7 +12,7 @@ This lab documents real-world issues encountered during tenant setup and how the
 ## Background / Context
 I purchased a custom domain through GoDaddy and initially made the mistake of also purchasing a Microsoft 365 Essentials license through GoDaddy. I did not realise at the time that this would prevent me from managing my own Microsoft 365 tenant directly.
 
-This resulted in limited control over tenant configuration and role management.
+This resulted in limited control over my tenant configuration and role management.
 
 ---
 
