@@ -29,7 +29,7 @@ Key learnings:
 - Connected:  
   - Azure Active Directory  
   - Azure Monitor  
-- Ran into licensing limitations when enabling some connectors (e.g., Defender for Office Purview)  
+- Ran into licensing limitations when enabling some connectors (e.g., Microsoft Defender for Office 365 (Preview) 
 - Learned that certain Defender connectors require higher-tier licenses  
 
 ---
