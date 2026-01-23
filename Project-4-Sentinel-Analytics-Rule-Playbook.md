@@ -51,8 +51,6 @@ At this stage, the rule appeared to work, but behaviour was not immediately clea
   - Send an email notification to my address
 - Assigned appropriate permissions to allow Sentinel to trigger the playbook
 
-![Sentinel automation playbook configuration](screenshots/project-4/playbook.png)
-
 ---
 
 ## Issues Encountered (and Lessons Learned)
@@ -84,7 +82,6 @@ This clarified the **relationship between logs → alerts → incidents → auto
   - A Sentinel analytics rule
   - An automation playbook structure
 
-    
 - Gained a clearer understanding of:
   - Sentinel detection logic
   - Alert vs incident behaviour
@@ -100,7 +97,7 @@ Although the full workflow did not trigger as intended initially, the troublesho
 - Automation only works when detections are correctly configured
 - Small misconfigurations can silently break response workflows
 
----![Sentinel analytics rule for failed sign-ins](screenshots/project-4/analytics-rule.png)
+---
 
 ## Next Steps
 - Refine the analytics rule to reliably generate incidents
