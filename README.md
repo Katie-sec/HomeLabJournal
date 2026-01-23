@@ -39,6 +39,8 @@ This repository is intended to document my personal IT and cybersecurity home la
 
 [Project 3: Azure Log Analytics & KQL Exploration](Project-3-Azure-Log-Analytics-and-KQL-Exploration.md)
 
+[Project 4: Sentinel Analytics Rule & Playbook](./Project-4-Sentinel-Analytics-Rule-Playbook.md)
+
 - ---
 
 ## Repository Structure
