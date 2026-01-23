@@ -51,6 +51,8 @@ At this stage, the rule appeared to work, but behaviour was not immediately clea
   - Send an email notification to my address
 - Assigned appropriate permissions to allow Sentinel to trigger the playbook
 
+- ![Sentinel automation playbook configuration](screenshots/project-4/playbook.png)
+
 ---
 
 ## Issues Encountered (and Lessons Learned)
@@ -81,6 +83,9 @@ This clarified the **relationship between logs → alerts → incidents → auto
   - KQL queries for failed sign-ins
   - A Sentinel analytics rule
   - An automation playbook structure
+
+![Sentinel analytics rule for failed sign-ins](screenshots/project-4/analytics-rule.png)
+  - 
 - Gained a clearer understanding of:
   - Sentinel detection logic
   - Alert vs incident behaviour
