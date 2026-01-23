@@ -83,7 +83,7 @@ This clarified the **relationship between logs → alerts → incidents → auto
   - KQL queries for failed sign-ins
   - A Sentinel analytics rule
   - An automation playbook structure
-![Sentinel analytics rule for failed sign-ins](screenshots/project-4/analytics-rule.png)
+
     
 - Gained a clearer understanding of:
   - Sentinel detection logic
@@ -100,7 +100,7 @@ Although the full workflow did not trigger as intended initially, the troublesho
 - Automation only works when detections are correctly configured
 - Small misconfigurations can silently break response workflows
 
----
+---![Sentinel analytics rule for failed sign-ins](screenshots/project-4/analytics-rule.png)
 
 ## Next Steps
 - Refine the analytics rule to reliably generate incidents
