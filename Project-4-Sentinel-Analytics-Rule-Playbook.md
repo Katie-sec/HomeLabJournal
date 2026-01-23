@@ -51,7 +51,7 @@ At this stage, the rule appeared to work, but behaviour was not immediately clea
   - Send an email notification to my address
 - Assigned appropriate permissions to allow Sentinel to trigger the playbook
 
-- ![Sentinel automation playbook configuration](screenshots/project-4/playbook.png)
+![Sentinel automation playbook configuration](screenshots/project-4/playbook.png)
 
 ---
 
