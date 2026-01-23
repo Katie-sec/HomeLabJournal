@@ -38,7 +38,6 @@ Key learnings:
 
 - Ran basic queries to understand log structure and available data:
 
-```kql
 // Latest 20 activities in Azure subscription
 AzureActivity
 | top 20 by TimeGenerated desc
