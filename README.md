@@ -41,6 +41,8 @@ This repository is intended to document my personal IT and cybersecurity home la
 
 [Project 4: Sentinel Analytics Rule & Playbook](./Project-4-Sentinel-Analytics-Rule-Playbook.md)
 
+[Project 5 – Impossible Travel Alert Lab](Project-5-Impossible-Travel-Alert-Lab.md)
+
 - ---
 
 ## Repository Structure
