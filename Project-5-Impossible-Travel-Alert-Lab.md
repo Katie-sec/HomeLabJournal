@@ -37,9 +37,6 @@ Simulate a SOC workflow for detecting impossible travel sign-ins, logging alerts
 5. Configured **Excel column mapping** and **DateTime formatting**
 6. Verified alerts populate Excel rows correctly when test alerts fired  
 
-@formatDateTime(convertFromUtc(triggerOutputs()?['body']?['StartTime'],'GMT Standard Time'),'yyyy-MM-dd HH:mm:ss')
-Verified alerts populate Excel rows correctly when test alerts fired
-
 ---
 
 # 3️ Lessons Learned
