@@ -37,7 +37,7 @@ Simulate a SOC workflow for detecting impossible travel sign-ins, logging alerts
    - Mistake: Without this, workflow validation failed (`WorkflowManagedIdentityConfigurationInvalid`)  
 5. Assigned **Microsoft Sentinel Automation Contributor** to the managed identity  
 6. Configured **Excel column mapping** and **DateTime formatting**:
-```text
+
 @formatDateTime(convertFromUtc(triggerOutputs()?['body']?['StartTime'],'GMT Standard Time'),'yyyy-MM-dd HH:mm:ss')
 Verified alerts populate Excel rows correctly when test alerts fired
 
