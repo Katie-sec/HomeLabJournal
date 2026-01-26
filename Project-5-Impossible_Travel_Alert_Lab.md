@@ -47,13 +47,11 @@ Resource group matters: Creating a Logic App outside Sentinel may prevent it fro
 
 Managed Identity is critical: Playbooks fail to validate without enabling it.
 
-RBAC permissions must be correct: Sentinel needs access to the playbook’s managed identity.
-
 DateTime formatting is essential for readable Excel logs.
 
 Automation order only matters if multiple rules target the same alert.
 
-Mistakes are part of learning: Recreating the playbook in the correct RG was a key step to make the lab functional.
+Recreating the playbook in the correct RG was a key step to make the lab functional.
 
 ---
 
