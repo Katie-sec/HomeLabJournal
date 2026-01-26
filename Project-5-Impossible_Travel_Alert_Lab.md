@@ -30,11 +30,11 @@ Simulate a SOC workflow for detecting impossible travel sign-ins, logging alerts
 
 1. Created **Impossible Travel Analytics Rule** in Sentinel  
 2. Initially created **Logic Apps Playbook** in the **wrong resource group** (`Impossible_Travel_Lab_Playbook_group`)  
-   - ❌ Mistake: Sentinel could not see the playbook  
-   - ⚠ Result: Playbook didn’t appear in Sentinel → automation rule could not attach  
+   - Mistake: Sentinel could not see the playbook  
+   - Result: Playbook didn’t appear in Sentinel → automation rule could not attach  
 3. Fixed by **recreating the Logic Apps Playbook directly via Sentinel** in the **correct resource group** (`HomeLab-Security`)  
 4. Enabled **System-assigned Managed Identity** on the playbook  
-   - ❌ Mistake: Without this, workflow validation failed (`WorkflowManagedIdentityConfigurationInvalid`)  
+   - Mistake: Without this, workflow validation failed (`WorkflowManagedIdentityConfigurationInvalid`)  
 5. Assigned **Microsoft Sentinel Automation Contributor** to the managed identity  
 6. Configured **Excel column mapping** and **DateTime formatting**:
 ```text
