@@ -1,39 +1,28 @@
-# Project 6 — Editable GitHub Pages Website
+## Purpose
+This repository is intended to document my personal IT and cybersecurity home lab experiments. It helps me track learning, troubleshoot issues, and reflect on lessons learned.
 
-This is the **Version 10 design**, reorganised into editable files. It is a public, offline-safe portfolio simulation and does not connect to Sentinel, Excel or Azure.
+---
 
-## Update the site directly on GitHub
+## Skills Demonstrated
+- **Cloud & Virtualization:** Basic Azure fundamentals, simple VM setup experiments  
+- **Cybersecurity:** Monitoring failed logins in Azure, experimenting with MFA Conditional Access policies, creating simple automation playbooks  
+- **Networking:** Static IP configuration for home devices  
+- **Scripting & Automation:** Basic PowerShell snippets for alerts  
+- **Documentation & Reporting:** Journaling of lab experiments  
 
-1. Open the repository and select the file you want to edit.
-2. Click the pencil **Edit this file** button.
-3. Make your changes, then choose **Commit changes**.
-4. Wait for GitHub Pages to deploy the new commit. Refresh the site.
+---
 
-### What to edit
+## Projects / Labs
 
-| File | Purpose |
-|---|---|
-| `data/site-copy.js` | Landing-page headline and introduction, investigation introduction |
-| `data/catalog.js` | Hunt names, descriptions, ATT&CK mappings, priority and simulated counts |
-| `data/walkthroughs.js` | Workflow descriptions and zero-result investigation explanations |
-| `styles.css` | Colour scheme, layout and typography |
-| `app.js` | Website behaviour and more detailed interactive walkthrough content |
-| `index.html` | Page structure and static labels |
+[Project 1: Microsoft Tenant Setup & Entra PIM Implementation](Project-1-Microsoft-Tenant-Entra-PIM.md)
 
-**Adding a new hunt is not yet a single-click action.** The existing simulation assumes ten hunts in several places, so adding TH-011 will need a further update to the data model. Do not simply add an eleventh row without checking all scenarios and walkthroughs. This is Phase 1: editable existing content.
+[Project 2: Microsoft 365 Tenant Security](Project-2-Microsoft-365-Tenant-Security.md)
 
-## Deploying without losing the live site
+[Project 3: Azure Log Analytics & KQL Exploration](Project-3-Azure-Log-Analytics-and-KQL-Exploration.md)
 
-Your current Pages site uses the repository-root `index.html`. Upload the **contents** of this package to the repository root (not the enclosing directory), replacing the existing `index.html`. The other files and `data` folder must be uploaded too.
+[Project 4: Sentinel Analytics Rule & Playbook](./Project-4-Sentinel-Analytics-Rule-Playbook.md)
 
-**Safer option:** create a branch called `editable-site-preview` and upload there first, then merge after checking the preview or testing locally. Back up your original `index.html` before replacement.
+[Project 5: Impossible Travel Alert Lab](Project-5-Impossible-Travel-Alert-Lab.md)
 
-## Privacy and publication
 
-All files in this public repository can be read by anyone. Never add credentials, personal user identifiers, private workbook data, actual incident logs or unapproved KQL. All demo identities and results must remain fictional.
-
-## Future phases
-
-- A structured, extensible catalogue for TH-011 onward
-- A review-and-approval publishing workflow from the private register to GitHub
-- Full Project 6 architecture and write-up
+- ---
