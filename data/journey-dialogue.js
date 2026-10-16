@@ -36,7 +36,7 @@ const journeyDialogue = {
   },
   "TH-003": {
     "positive": [
-      "My Logic App runs the scheduled hunts and writes the totals to the register. For {hunt}, it reports {matches} matches in this fictional scenario.",
+      "My Logic App runs the scheduled hunts and writes the totals to the register. For {hunt}, it reports {matches} matches in this fictional scenario. This investigation follows an evidence-led approach.",
       "In my scheduled master query, the final stages reduce the events to a count. To investigate, I remove the final summarize and QueryName stages and return event-level fields.",
       "Now I can inspect the underlying activity. The sample rows below are fictional, with different accounts, assets and outcomes. Select a row to inspect its details.",
       "Before deciding what this means, I examine the actor, target, timestamp, result and any expanded properties. {check}",
