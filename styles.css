@@ -52,3 +52,155 @@ html[data-theme="dark"] .sidebar{background:linear-gradient(175deg,#0b1528,#1b27
 .enrich-grid{display:grid;grid-template-columns:minmax(320px,390px) minmax(0,1fr);gap:36px;align-items:center}.donut{width:min(100%,330px);aspect-ratio:1;height:auto;border-radius:50%;display:grid;place-items:center;margin:auto;position:relative;background:conic-gradient(#2c73c9 0 50%,#e2e8f0 50% 100%)}.donut:before{content:'';position:absolute;inset:52px;border-radius:50%;background:var(--card-bg,#fff)}.donut-center{position:relative;text-align:center}.donut-center strong{display:block;font-size:56px;line-height:1.1}.donut-center small{display:block;font-size:13px;color:#8090a0;max-width:160px;line-height:1.4;margin:6px auto 0}.tactic-legend{display:grid;gap:9px}.tactic-legend button{border:1px solid #e1e7ee;border-radius:8px;background:transparent;text-align:left;padding:10px;color:inherit}.tactic-legend button:hover{border-color:#4a8bdc}.tactic-legend b{float:right}.guide-step{padding:14px;border:1px solid #e1e8f1;border-radius:9px;margin:10px 0}.guide-step strong{display:block;margin-bottom:6px;font-size:13px}.guide-step p{font-size:12px}.guide-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.guide-actions button{border:1px solid #b9cfe9;background:#edf5ff;color:#205ca3;padding:8px 12px;border-radius:6px;font-size:11px}.guide-code{white-space:pre-wrap;max-height:270px;overflow:auto}.guide-note{font-size:11px;padding:12px;background:#edf5ff;border-radius:8px;color:#486785;margin:12px 0}.guide-table{width:100%;overflow:auto}.guide-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.guide-meta div{background:#f4f7fb;border-radius:8px;padding:12px;font-size:11px}.guide-meta b{display:block;margin-bottom:5px}.full-link{display:inline-block;margin-top:10px;color:#2369c3;font-size:12px}.pill{font-size:10px;border:1px solid #dbe4ef;border-radius:15px;padding:5px 9px}@media(max-width:850px){.enrich-grid{grid-template-columns:1fr;gap:22px}.donut{width:min(100%,300px)}}
 html[data-theme=dark] .donut:before{background:#202b3a}html[data-theme=dark] .guide-meta div,html[data-theme=dark] .guide-note{background:#24354b;color:#cad8e8}html[data-theme=dark] .tactic-legend button,html[data-theme=dark] .guide-step{border-color:#405069;color:#d8e3f2}html[data-theme=dark] .guide-actions button{background:#233b5a;color:#d8eaff}
 
+
+/* Real lab tour — additive styles, no changes to existing components */
+.lab-intro{margin-bottom:18px}.lab-intro h2{font-size:26px;margin:10px 0}.lab-intro p{max-width:900px;line-height:1.7}.lab-labels{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.lab-labels span{border:1px solid var(--line,#30455e);border-radius:99px;padding:7px 10px;font-size:12px}.lab-grid{display:grid;grid-template-columns:minmax(250px,.85fr) minmax(0,1.3fr);gap:18px;margin-bottom:18px}.lab-step-list{display:grid;gap:9px}.lab-step{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid #344761;background:transparent;color:inherit;border-radius:12px;padding:12px;cursor:pointer}.lab-step.active{border-color:#4e9aff;background:rgba(64,130,235,.15)}.lab-step b{display:block;font-size:13px}.lab-step small{display:block;opacity:.7;margin-top:4px}.lab-step .number{color:#7ebcff;font-weight:700}.lab-detail{min-height:270px;line-height:1.65}.lab-detail h3{font-size:20px;margin:10px 0}.lab-detail .eyebrow{margin-top:14px}.lab-detail p{margin:8px 0 15px}.lab-nav,.lab-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}.lab-replay{margin-top:20px;border:1px solid #344761;border-radius:12px;padding:18px;min-height:80px}.lab-replay .lab-trail{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.lab-replay .lab-trail span{padding:7px 9px;background:rgba(77,143,232,.14);border-radius:8px;font-size:12px}.lab-replay table{width:100%;border-collapse:collapse;font-size:13px}.lab-replay td,.lab-replay th{padding:10px;border-bottom:1px solid #344761;text-align:left}.lab-replay .lab-scroll{overflow-x:auto}.lab-replay .lab-email{margin-top:16px;border-left:3px solid #6ca9ff;padding:12px;background:rgba(77,143,232,.09)}.lab-evidence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.lab-evidence>div{border:1px solid #344761;border-radius:12px;padding:15px}.lab-evidence p{line-height:1.6;font-size:13px;margin-bottom:0}@media(max-width:850px){.lab-grid,.lab-evidence{grid-template-columns:1fr}}
+/* Visual, browser-only lab execution replay */
+.lab-console{margin-top:18px}.lab-console-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0 20px}.lab-console-toolbar label{font-weight:700;font-size:12px}.lab-console-toolbar select{max-width:360px}.lab-run-status{font-size:12px;font-weight:700;color:#5370a0;margin-left:auto}.lab-console-grid{display:grid;grid-template-columns:minmax(320px,.85fr) minmax(350px,1.15fr);gap:14px}.lab-azure-window,.lab-data-window,.lab-excel-window,.lab-mail-window,.lab-event-window{border:1px solid #d9e3f2;border-radius:12px;background:#fff;overflow:hidden;color:#1b304d}.lab-window-head{display:flex;align-items:center;gap:10px;padding:13px 15px;background:#f7faff;border-bottom:1px solid #dfe8f5}.lab-window-head>div{display:flex;flex-direction:column;gap:2px;min-width:0}.lab-window-head strong{font-size:13px;overflow-wrap:anywhere}.lab-window-head small{font-size:11px;color:#6c7f9a}.lab-window-icon{display:grid;place-items:center;width:28px;height:28px;border-radius:7px;background:#e3eeff;color:#2167cb;font-weight:800}.lab-live-label,.lab-sheet-count,.lab-mail-state{margin-left:auto;white-space:nowrap;font-size:10px;font-weight:800;color:#55749d}.lab-window-bar{padding:9px 14px;font-size:11px;font-weight:700;border-bottom:1px solid #e9eef6}.lab-window-bar span{float:right;font-weight:400;color:#8290a5}.lab-pipeline{padding:15px 25px;max-height:575px;overflow:auto}.lab-pipe-node{border:1px solid #d3dfef;border-left:4px solid #9cb5d6;border-radius:8px;display:flex;align-items:center;gap:10px;padding:9px 11px;min-height:53px;transition:background .25s,border-color .25s}.lab-pipe-node>div{min-width:0;flex:1}.lab-pipe-node b{display:block;font-size:11px}.lab-pipe-node small{display:block;font-size:10px;color:#7b8aa1;margin-top:3px}.lab-node-icon{width:25px;height:25px;display:grid;place-items:center;border-radius:6px;background:#edf3fa;color:#52749c;font-size:12px;font-weight:800;flex-shrink:0}.lab-node-state{font-size:10px;color:#8898aa}.lab-pipe-node.processing{border-color:#3c7af4;border-left-color:#3779f8;background:#eef5ff;box-shadow:0 0 0 2px #e2ecff}.lab-pipe-node.processing .lab-node-state{color:#2563eb;font-weight:800}.lab-pipe-node.complete{border-left-color:#16a34a;background:#f4fff7}.lab-pipe-node.complete .lab-node-icon{background:#d9f8e3;color:#167e3a}.lab-pipe-node.complete .lab-node-state{color:#198548}.lab-pipe-arrow{text-align:center;height:16px;line-height:16px;color:#93a6c2}.lab-data-tabs{display:flex;border-bottom:1px solid #e3eaf3}.lab-tab{padding:11px 17px;border:0;border-bottom:2px solid transparent;background:none;color:#637895;cursor:pointer;font-size:12px;font-weight:700}.lab-tab.active{border-bottom-color:#2872eb;color:#2466c9}.lab-data-pane{height:560px;overflow:auto}.lab-data-hint{font-size:11px;color:#6d819b;padding:11px 13px;margin:0}.lab-mini-table{width:100%;border-collapse:collapse;font-size:11px}.lab-mini-table th{background:#f1f5fb;text-align:left;font-size:10px;color:#506681}.lab-mini-table th,.lab-mini-table td{border-bottom:1px solid #e7edf5;padding:9px 11px;vertical-align:top}.lab-mini-table td small{display:block;color:#8796a9;font-size:10px;margin-top:3px}.lab-match{color:#bc3446;font-weight:800}.lab-excel-window{margin-top:15px}.excel-head .lab-window-icon{background:#167346;color:#fff}.lab-excel-toolbar{display:flex;gap:19px;padding:10px 15px;background:#f3faf6;border-bottom:1px solid #d9e9dd;color:#366448;font-size:11px}.lab-excel-save{margin-left:auto;color:#218052}.lab-sheet-scroll{overflow:auto;max-height:340px;min-height:200px}.lab-sheet{border-collapse:collapse;min-width:1350px;width:100%;font-size:11px;color:#253951}.lab-sheet th{background:#2875ac;color:#fff;white-space:nowrap;text-align:left}.lab-sheet th,.lab-sheet td{border:1px solid #d7e3f0;padding:8px 9px;vertical-align:top}.lab-sheet tbody tr:nth-child(even){background:#eef4fc}.lab-sheet .lab-rownum{width:32px}.lab-sheet-new{animation:labRowFlash 1.2s ease}.lab-alert-cell{background:#fbd9df;color:#a72336;font-weight:800}.lab-placeholder td{text-align:center;color:#8293a9;padding:55px 12px}.lab-sheet-footer{display:flex;justify-content:space-between;gap:12px;background:#eef7f2;border-top:1px solid #d5e9dc;padding:10px 13px;font-size:11px;color:#236945}.lab-sheet-footer span{color:#698b79}.lab-bottom-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:15px}.lab-mail-window,.lab-event-window{min-height:245px}.lab-mail-empty{padding:45px 20px;text-align:center;font-size:12px;color:#8a9ab0}.lab-mail-content{padding:15px 19px;font-size:12px;line-height:1.65}.lab-mail-content h3{font-size:15px;margin:14px 0 8px}.lab-mail-content p{margin:8px 0}.lab-mail-content ul{padding-left:18px}.lab-mail-meta{border-bottom:1px solid #e7edf5;padding-bottom:10px}.lab-mail-link{color:#246cc6;text-decoration:underline}.lab-mail-note{font-style:italic;color:#6e809a}.lab-mail-state.sent{color:#16874c}.lab-event-log{max-height:320px;overflow:auto;padding:15px 22px 15px 35px;font-size:11px;line-height:1.7;color:#506784;margin:0}.lab-event-log li{margin-bottom:7px}.lab-console-disclaimer{font-size:11px;color:#7385a0;margin:16px 0 0}.lab-console .lab-data-window,.lab-console .lab-azure-window{min-width:0}@keyframes labRowFlash{from{background:#c6f5d6}to{background:transparent}}@media(max-width:920px){.lab-console-grid,.lab-bottom-grid{grid-template-columns:1fr}.lab-data-pane{height:350px}.lab-pipeline{max-height:450px}}@media(max-width:560px){.lab-console-toolbar{align-items:stretch}.lab-console-toolbar select{max-width:100%;width:100%}.lab-run-status{width:100%;margin:0}.lab-window-bar span{display:none}}
+/* dark-theme compatibility with the site's existing theme control */
+[data-theme="dark"] .lab-azure-window,[data-theme="dark"] .lab-data-window,[data-theme="dark"] .lab-excel-window,[data-theme="dark"] .lab-mail-window,[data-theme="dark"] .lab-event-window{background:#17243a;color:#e2eaf8;border-color:#354561}
+[data-theme="dark"] .lab-window-head,[data-theme="dark"] .lab-window-bar,[data-theme="dark"] .lab-mini-table th,[data-theme="dark"] .lab-excel-toolbar,[data-theme="dark"] .lab-sheet-footer{background:#1d2e49;color:#e2eaf8;border-color:#354561}
+[data-theme="dark"] .lab-pipe-node{border-color:#3d5270;background:#20324d}[data-theme="dark"] .lab-pipe-node.complete{background:#173c35}[data-theme="dark"] .lab-pipe-node.processing{background:#1e3c69}[data-theme="dark"] .lab-sheet{color:#e2eaf8}[data-theme="dark"] .lab-sheet tbody tr:nth-child(even){background:#213451}[data-theme="dark"] .lab-sheet th{background:#235782}[data-theme="dark"] .lab-sheet td{border-color:#354561}[data-theme="dark"] .lab-mini-table td{border-color:#354561}
+
+/* Wide reference data in the Sentinel watchlist simulation */
+.lab-data-pane { overflow-x: auto; }
+.lab-data-pane .lab-mini-table:has(th:nth-child(4)) { min-width: 980px; }
+.lab-data-pane .lab-mini-table:has(th:nth-child(4)) td:last-child { min-width: 340px; white-space: normal; line-height: 1.5; }
+.lab-data-pane .lab-mini-table:has(th:nth-child(4)) td:first-child { min-width: 220px; }
+.lab-data-pane .lab-mini-table:has(th:nth-child(4)) td:nth-child(3) { min-width: 200px; }
+
+
+/* Drag the right edge of a table header to resize its column. */
+.lab-resizable-table{table-layout:fixed;min-width:100%;border-collapse:collapse}
+.lab-resizable-table th{position:relative;white-space:nowrap;padding-right:18px}
+.lab-resizable-table td{overflow-wrap:anywhere}
+.lab-col-resizer{position:absolute;right:0;top:0;bottom:0;width:11px;cursor:col-resize;touch-action:none;user-select:none;z-index:2}
+.lab-col-resizer::after{content:"";position:absolute;top:18%;bottom:18%;left:5px;width:2px;background:#b6c8de;opacity:.5;border-radius:2px}
+.lab-col-resizer:hover::after,.lab-col-resizer:focus-visible::after,.lab-col-resizer.dragging::after{background:#2872eb;opacity:1;width:3px}
+.lab-col-resizer:focus-visible{outline:2px solid #2872eb;outline-offset:-2px}
+
+/* Show the real nested For each actions while processing each hunt. */
+.lab-loop-details{margin:4px 8px 10px 20px;padding:9px 10px;border:1px solid #aabfdb;border-left:3px solid #4b79bc;border-radius:8px;background:#f6f9ff;color:#233c60}
+.lab-loop-caption{font-size:11px;font-weight:700;margin-bottom:7px}
+.lab-loop-step{display:flex;align-items:center;gap:7px;padding:7px 8px;margin:5px 0;border:1px solid #dce6f3;border-radius:6px;background:white;font-size:11px}
+.lab-loop-step b{flex:1;font-weight:650}.lab-loop-step small{font-size:10px;color:#64748b}
+.lab-loop-step.processing{border-color:#4f84ef;background:#eaf2ff;box-shadow:inset 3px 0 #2563eb}
+.lab-loop-step.complete{border-color:#9cdec1;background:#f0fff7}
+.lab-run-spacer td{height:25px!important;background:#e6edf7!important;border-top:2px solid #9eb4d1!important;border-bottom:2px solid #9eb4d1!important;padding:0!important}
+
+
+/* V8: Prevent fixed-layout columns from overlapping or bleeding into neighbours.
+   Existing min-width rules on watchlist cells must not override colgroup widths. */
+.lab-console .lab-resizable-table {
+  table-layout: fixed !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  width: auto;
+}
+.lab-console .lab-resizable-table th,
+.lab-console .lab-resizable-table td,
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) td:first-child,
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) td:nth-child(3),
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) td:last-child {
+  min-width: 0 !important;
+  max-width: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  white-space: normal;
+}
+.lab-console .lab-resizable-table th {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: 17px;
+}
+.lab-console .lab-resizable-table td { line-height: 1.45; }
+.lab-console .lab-resizable-table col { min-width: 0; }
+
+/* V9: show multiple completed reporting blocks without forcing a tiny spreadsheet viewport. */
+.lab-console .lab-sheet-scroll { max-height: 1350px; min-height: 400px; }
+.lab-repeat-hint { margin: 0 0 16px; padding: 12px 15px; border: 1px solid #cbdcf5; background: #f1f6ff; color: #31517b; border-radius: 10px; font-size: 12px; line-height: 1.6; }
+[data-theme="dark"] .lab-repeat-hint { background: #1e304d; color: #d5e4ff; border-color: #435b7e; }
+@media (max-width: 600px) { .lab-console .lab-sheet-scroll { max-height: 950px; min-height: 330px; } }
+
+/* V10: uniform register rows, repeat headings at every new reporting block. */
+.lab-console .lab-sheet tbody tr:not(.lab-run-spacer):not(.lab-run-repeat-header):not(.lab-placeholder) { height: 56px; }
+.lab-console .lab-sheet tbody tr:not(.lab-run-spacer):not(.lab-run-repeat-header):not(.lab-placeholder) td { height: 56px; padding: 7px 9px; vertical-align: middle; }
+.lab-console .lab-sheet .lab-cell-content { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; max-height: 34px; line-height: 17px; overflow-wrap: anywhere; }
+.lab-console .lab-sheet .lab-run-repeat-header { height: 34px; }
+.lab-console .lab-sheet .lab-run-repeat-header th { background: #2875ac; color: #fff; padding: 8px 9px; font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px solid #d7e3f0; }
+[data-theme="dark"] .lab-console .lab-sheet .lab-run-repeat-header th { background: #235782; }
+
+/* V11: compact, consistent register rows; allow the Notes column more room. */
+.lab-console .lab-sheet tbody tr:not(.lab-run-spacer):not(.lab-run-repeat-header):not(.lab-placeholder) { height: 40px; }
+.lab-console .lab-sheet tbody tr:not(.lab-run-spacer):not(.lab-run-repeat-header):not(.lab-placeholder) td { height: 40px; padding: 4px 8px; vertical-align: middle; }
+.lab-console .lab-sheet .lab-cell-content { max-height: 30px; line-height: 15px; }
+
+/* V12: consistent watchlist grid rows and comparison controls */
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody tr{height:43px!important;max-height:43px!important}
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody td{height:43px!important;max-height:43px!important;min-height:43px!important;padding:5px 10px!important;vertical-align:middle!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;line-height:1.4!important}
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody td:last-child{white-space:nowrap!important}
+.lab-run-browser{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 13px;margin:10px 0 15px;border:1px solid #d9e3f2;border-radius:9px;background:#f7faff;color:#263d60;font-size:12px}
+.lab-run-browser label{font-weight:800}.lab-run-browser select{max-width:400px;min-width:230px;padding:7px 9px;border-radius:6px;border:1px solid #c4d6ed;background:#fff;color:#18365c}.lab-run-browser span{color:#526b8d}
+.lab-run-date{font:inherit;color:#2266bf;border:1px solid transparent;border-radius:5px;background:transparent;padding:4px 5px;cursor:pointer;text-decoration:underline;text-underline-offset:2px;text-align:left}
+.lab-run-date:hover,.lab-run-date:focus-visible{background:#e4efff;border-color:#8db6f0}
+.lab-run-date.selected{background:#e4efff;border-color:#76a6e9;font-weight:800}
+.lab-sheet tbody tr[data-run-id]{cursor:pointer}
+.lab-sheet tbody tr[data-run-id]:hover td{box-shadow:inset 0 0 0 1px #b6d5f7}
+[data-theme="dark"] .lab-run-browser{background:#1d2e49;color:#e2eaf8;border-color:#354561}
+[data-theme="dark"] .lab-run-browser select{background:#17243a;color:#e2eaf8}
+[data-theme="dark"] .lab-run-date{color:#91c3ff}
+
+
+/* V13: show the entire watchlist content without clipped notes. */
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody tr {
+  height:auto !important; max-height:none !important;
+}
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody td,
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody td:last-child {
+  height:auto !important; max-height:none !important; min-height:0 !important;
+  padding:10px 11px !important; vertical-align:top !important;
+  overflow:visible !important; text-overflow:clip !important;
+  white-space:normal !important; overflow-wrap:break-word !important;
+  line-height:1.55 !important;
+}
+/* Keep each watchlist row visually uniform across its columns, with natural height. */
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody tr { border-bottom:1px solid #e7edf5; }
+/* Make clickable dates resemble ordinary spreadsheet text rather than blue buttons. */
+.lab-console .lab-run-date,
+[data-theme="dark"] .lab-console .lab-run-date {
+  color:inherit; font-weight:800; text-decoration:none; border:0;
+  background:transparent; border-radius:0; padding:2px 0;
+}
+.lab-console .lab-run-date.selected,
+.lab-console .lab-run-date:hover {
+  color:inherit; background:transparent; border:0; text-decoration:underline;
+  text-underline-offset:3px;
+}
+.lab-console .lab-run-date:focus-visible { outline:2px solid #2872eb; outline-offset:2px; }
+
+/* V14 streamlined navigation, with legacy sections preserved for editor compatibility. */
+.lab-quickstart{margin:0 0 18px;padding:13px 17px;border:1px solid #c9d9f2;border-radius:12px;background:#f3f7ff;color:#25436f;font-size:13px;line-height:1.55}
+.lab-quickstart strong{color:#152d56}.lab-quickstart span{color:#506c93}
+[data-theme="dark"] .lab-quickstart{background:#1c2b47;border-color:#3b5074;color:#e1ebfc}
+[data-theme="dark"] .lab-quickstart strong{color:#fff}
+.lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody tr{height:52px}
+.lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody td{height:52px;min-height:52px;max-height:52px;box-sizing:border-box;vertical-align:middle;line-height:1.4;overflow:hidden}
+@media(max-width:700px){.lab-quickstart{font-size:12px;padding:11px 12px}}
+
+/* V15: Keep the legacy overview simulator wired for compatibility, but remove
+   its duplicate controls from the visitor experience. */
+.head-actions.legacy-controls { display:none !important; }
+
+/* Watchlist: generous Notes and LogicTuning columns keep each row compact.
+   The existing horizontal scroll and draggable column dividers remain. */
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody tr {
+  height:44px !important; max-height:44px !important;
+}
+.lab-console .lab-data-pane .lab-mini-table:has(th:nth-child(4)) tbody td {
+  height:44px !important; min-height:44px !important; max-height:44px !important;
+  padding:8px 11px !important; vertical-align:middle !important;
+  white-space:nowrap !important; overflow:hidden !important;
+  text-overflow:clip !important; overflow-wrap:normal !important;
+}
