@@ -5,21 +5,25 @@ let selected=0;const $=id=>document.getElementById(id);const list=$('labSteps');
 function escapeLab(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function richLabText(value){
   const wrapper=document.createElement('div');
-  wrapper.className='lab-rich-text';
+  wrapper.className='lab-formatted-copy';
   const lines=String(value||'').replace(/\r\n?/g,'\n').split('\n');
-  let list=null;
   for(const raw of lines){
     const line=raw.trim();
-    if(!line){list=null;continue;}
+    if(!line) continue;
     const bullet=line.match(/^(?:[-*•]\s+|\d+[.)]\s+)(.*)$/);
-    if(bullet){
-      if(!list){list=document.createElement('ul');wrapper.appendChild(list);}
-      const li=document.createElement('li');li.textContent=bullet[1];list.appendChild(li);
-    }else{
-      list=null;const p=document.createElement('p');p.textContent=line;wrapper.appendChild(p);
-    }
+    const content=bullet?bullet[1]:line;
+    const p=document.createElement('p');
+    p.className=bullet?'lab-formatted-entry':'lab-formatted-paragraph';
+    const colon=content.indexOf(':');
+    if(bullet && colon>0 && colon<90){
+      const strong=document.createElement('strong');
+      strong.textContent=content.slice(0,colon+1);
+      p.appendChild(strong);
+      p.appendChild(document.createTextNode(content.slice(colon+1)));
+    }else{p.textContent=content;}
+    wrapper.appendChild(p);
   }
-  return wrapper.innerHTML;
+  return wrapper.outerHTML;
 }
 function showRegisterGallery(){
   const target=document.getElementById('labDetail');
@@ -27,8 +31,8 @@ function showRegisterGallery(){
   section.className='lab-register-gallery';
   section.innerHTML='<div class="eyebrow">REAL HOME-LAB WORKBOOK SCREENSHOTS</div><p class="lab-gallery-intro">Selected screenshots from my home-lab Threat Hunt Register. Click an image to view it at full size.</p>';
   const shots=[
-    ['assets/threat-hunt-register/overview-1.png','Overview & Standards · Part 1','Workbook structure, automation and review procedure'],
-    ['assets/threat-hunt-register/overview-2.png','Overview & Standards · Part 2','Query maintenance, triage and analyst responsibilities'],
+    ['assets/threat-hunt-register/overview-1.png','Workbook Architecture & Analyst Procedures','Workbook structure, automation and review procedure'],
+    ['assets/threat-hunt-register/overview-2.png','Query Maintenance & Operational Standards','Query maintenance, triage and analyst responsibilities'],
     ['assets/threat-hunt-register/catalogue.png','Query Catalogue','Hunt definitions, data sources and proposed ATT&CK mappings'],
     ['assets/threat-hunt-register/weekly-log.png','Weekly Hunt Data Log','Automated results, zero-match notes and highlighted findings']
   ];
