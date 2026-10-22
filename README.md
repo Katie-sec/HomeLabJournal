@@ -20,21 +20,27 @@ My aim is to document not just what I've built, but why I've built it, how it wo
 ## Projects / Labs
 
 [Project 1: Microsoft Tenant Setup & Entra PIM Implementation](Project-1-Microsoft-Tenant-Entra-PIM.md)
+
 Configured a Microsoft cloud environment and implemented Privileged Identity Management to explore secure administration and just-in-time privileged access.
 
 [Project 2: Microsoft 365 Tenant Security](Project-2-Microsoft-365-Tenant-Security.md)
+
 Explored Microsoft 365 security controls, including identity protection, MFA, Conditional Access and administrative security configurations.
 
 [Project 3: Azure Log Analytics & KQL Exploration](Project-3-Azure-Log-Analytics-and-KQL-Exploration.md)
+
 Connected security telemetry to Azure Log Analytics and developed KQL queries to investigate sign-in activity, audit events and other security-relevant data.
 
 [Project 4: Sentinel Analytics Rule & Playbook](./Project-4-Sentinel-Analytics-Rule-Playbook.md)
+
 Developed a Microsoft Sentinel detection rule and explored automated response workflows using Azure Logic Apps.
 
 [Project 5: Impossible Travel Alert Lab](Project-5-Impossible-Travel-Alert-Lab.md)
+
 Built an identity-focused detection scenario using Microsoft Sentinel and KQL to identify potentially suspicious sign-in patterns.
 
 [Project 6: Automated Threat Hunting & Reporting Lab]
+
 Recreated the core architecture of a threat-hunting automation programme I originally developed in my work environment.
 
 The lab brings together Microsoft Sentinel, Azure Log Analytics, KQL, Sentinel watchlists, Azure Logic Apps and Excel Online to automate ten scheduled threat hunts, classify results, populate a structured review register and notify an analyst when the workflow completes.
