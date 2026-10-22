@@ -39,7 +39,7 @@ Developed a Microsoft Sentinel detection rule and explored automated response wo
 
 Built an identity-focused detection scenario using Microsoft Sentinel and KQL to identify potentially suspicious sign-in patterns.
 
-[Project 6: Automated Threat Hunting & Reporting Lab]
+Project 6: Automated Threat Hunting & Reporting Lab - (Project write-up in progress. Interactive demonstration available separately.)
 
 Recreated the core architecture of a threat-hunting automation programme I originally developed in my work environment.
 
