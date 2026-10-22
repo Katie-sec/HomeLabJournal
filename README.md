@@ -34,14 +34,15 @@ Developed a Microsoft Sentinel detection rule and explored automated response wo
 [Project 5: Impossible Travel Alert Lab](Project-5-Impossible-Travel-Alert-Lab.md)
 Built an identity-focused detection scenario using Microsoft Sentinel and KQL to identify potentially suspicious sign-in patterns.
 
-Project 6: Automated Threat Hunting & Reporting Lab
+[Project 6: Automated Threat Hunting & Reporting Lab]
 Recreated the core architecture of a threat-hunting automation programme I originally developed in my work environment.
 
 The lab brings together Microsoft Sentinel, Azure Log Analytics, KQL, Sentinel watchlists, Azure Logic Apps and Excel Online to automate ten scheduled threat hunts, classify results, populate a structured review register and notify an analyst when the workflow completes.
 
 I also developed an interactive website to demonstrate the architecture and show how the different components work together, including a simulated automation run and screenshots from my actual home-lab environment.
 
-What I'm Working Towards
+## What I'm Working Towards
+
 I'm continuing to develop my practical skills in security investigations, incident response and threat hunting.
 
 My longer-term goal is to move into a dedicated threat-hunting role, building on my experience in security monitoring, detection engineering and automation.
