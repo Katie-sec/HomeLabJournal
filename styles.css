@@ -308,3 +308,19 @@ html[data-theme="dark"] #labDetail [data-lab-step] .lab-rich-text li {color:#aab
  overflow-wrap:normal !important;word-break:normal !important;
  padding:8px 10px !important;vertical-align:middle !important;
 }
+
+/* In-page screenshot gallery lightbox */
+.lab-gallery-open {text-align:left;cursor:zoom-in;font:inherit;color:inherit;width:100%;}
+.lab-gallery-open:focus-visible {outline:3px solid #4c77ec;outline-offset:3px;}
+.lab-lightbox {position:fixed;inset:0;z-index:99999;background:rgba(8,17,36,.88);display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;}
+.lab-lightbox-panel {width:min(1400px,100%);max-height:100%;display:flex;flex-direction:column;min-height:0;gap:10px;color:#fff;}
+.lab-lightbox-bar {display:flex;align-items:center;gap:16px;font-size:14px;}
+.lab-lightbox-title {flex:1;}
+.lab-lightbox-count {white-space:nowrap;opacity:.8;}
+.lab-lightbox button {cursor:pointer;background:#fff;color:#172b4c;border:0;border-radius:10px;font-size:20px;min-width:42px;min-height:42px;}
+.lab-lightbox button:focus-visible {outline:3px solid #8fb4ff;outline-offset:3px;}
+.lab-lightbox-stage {display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:0;flex:1;}
+.lab-lightbox-image {display:block;max-width:calc(100% - 110px);max-height:calc(100vh - 160px);width:auto;height:auto;object-fit:contain;box-shadow:0 10px 35px #0008;background:#fff;}
+.lab-lightbox-arrow {flex:0 0 44px;font-size:34px !important;}
+.lab-lightbox-hint {text-align:center;font-size:12px;opacity:.8;}
+@media(max-width:600px){.lab-lightbox{padding:10px}.lab-lightbox-stage{gap:5px}.lab-lightbox-image{max-width:calc(100% - 94px)}.lab-lightbox-arrow{flex-basis:40px}}
