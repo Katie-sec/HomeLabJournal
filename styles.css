@@ -324,3 +324,11 @@ html[data-theme="dark"] #labDetail [data-lab-step] .lab-rich-text li {color:#aab
 .lab-lightbox-arrow {flex:0 0 44px;font-size:34px !important;}
 .lab-lightbox-hint {text-align:center;font-size:12px;opacity:.8;}
 @media(max-width:600px){.lab-lightbox{padding:10px}.lab-lightbox-stage{gap:5px}.lab-lightbox-image{max-width:calc(100% - 94px)}.lab-lightbox-arrow{flex-basis:40px}}
+
+/* Screenshot viewer: readable zoom, panning and compact controls */
+.lab-lightbox-zoom-controls{display:inline-flex;align-items:center;gap:7px;margin-left:auto;margin-right:12px;white-space:nowrap}
+.lab-lightbox-zoom-controls button{background:#fff;color:#14243e;border:1px solid #a8b7cf;border-radius:7px;min-width:34px;min-height:32px;cursor:pointer;font-weight:700}
+.lab-lightbox-zoom-value{font:600 13px system-ui;color:#fff;min-width:42px;text-align:center}
+.lab-lightbox-viewport{width:min(84vw,1500px);height:min(76vh,850px);overflow:auto;display:flex;align-items:flex-start;justify-content:flex-start;overscroll-behavior:contain;cursor:grab;scrollbar-width:thin}
+.lab-lightbox-viewport .lab-lightbox-image{display:block;width:100%;max-width:none;max-height:76vh;object-fit:contain;flex:none;user-select:none;pointer-events:none}
+@media(max-width:650px){.lab-lightbox-zoom-controls{gap:3px;margin-right:4px}.lab-lightbox-viewport{width:78vw;height:70vh}.lab-lightbox-zoom-controls button{min-width:29px;padding:4px}}

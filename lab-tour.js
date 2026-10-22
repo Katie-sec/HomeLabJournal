@@ -15,7 +15,7 @@ function richLabText(value){
     const p=document.createElement('p');
     p.className=bullet?'lab-formatted-entry':'lab-formatted-paragraph';
     const colon=content.indexOf(':');
-    if(bullet && colon>0 && colon<90){
+    if(colon>0 && colon<90 && (bullet || /^(Overview & Standards|Query Catalogue|Weekly Hunt Data Log|Monthly Hunt Data Log|Findings & Escalations|Query Amendments & Notes):/.test(content))){
       const strong=document.createElement('strong');
       strong.textContent=content.slice(0,colon+1);
       p.appendChild(strong);
@@ -60,20 +60,42 @@ function updateLabGallery(){
   s.overlay.querySelector('.lab-lightbox-image').alt=title+' screenshot';
   s.overlay.querySelector('.lab-lightbox-title').textContent=title;
   s.overlay.querySelector('.lab-lightbox-count').textContent=(s.index+1)+' of '+s.shots.length;
+   setLabGalleryZoom(1);
 }
+ function setLabGalleryZoom(next){
+   const s=labGalleryState;if(!s)return;
+   s.zoom=Math.max(1,Math.min(5,Math.round(next*10)/10));
+   const viewport=s.overlay.querySelector('.lab-lightbox-viewport');
+   const image=s.overlay.querySelector('.lab-lightbox-image');
+   image.style.width=(s.zoom*100)+'%';
+   image.style.maxWidth='none';
+   image.style.maxHeight=s.zoom===1?'76vh':'none';
+   image.style.height='auto';
+   s.overlay.querySelector('.lab-lightbox-zoom-value').textContent=Math.round(s.zoom*100)+'%';
+   if(s.zoom===1){viewport.scrollTop=0;viewport.scrollLeft=0;}
+ }
 function openLabGallery(shots,index,returnFocus){
   closeLabGallery();
   const overlay=document.createElement('div');
   overlay.className='lab-lightbox';overlay.setAttribute('role','dialog');
   overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','Workbook screenshot viewer');
-  overlay.innerHTML='<div class="lab-lightbox-panel"><div class="lab-lightbox-bar"><strong class="lab-lightbox-title"></strong><span class="lab-lightbox-count"></span><button class="lab-lightbox-close" type="button" aria-label="Close image viewer">✕</button></div><div class="lab-lightbox-stage"><button class="lab-lightbox-arrow lab-lightbox-prev" type="button" aria-label="Previous screenshot">‹</button><img class="lab-lightbox-image" alt=""><button class="lab-lightbox-arrow lab-lightbox-next" type="button" aria-label="Next screenshot">›</button></div><div class="lab-lightbox-hint">Use ← and → to browse · Esc to close</div></div>';
+  overlay.innerHTML='<div class="lab-lightbox-panel"><div class="lab-lightbox-bar"><strong class="lab-lightbox-title"></strong><span class="lab-lightbox-count"></span><div class="lab-lightbox-zoom-controls"><button type="button" class="lab-lightbox-zoom-out" aria-label="Zoom out">−</button><span class="lab-lightbox-zoom-value">100%</span><button type="button" class="lab-lightbox-zoom-in" aria-label="Zoom in">+</button><button type="button" class="lab-lightbox-zoom-reset" aria-label="Reset zoom">Reset</button></div><button class="lab-lightbox-close" type="button" aria-label="Close image viewer">✕</button></div><div class="lab-lightbox-stage"><button class="lab-lightbox-arrow lab-lightbox-prev" type="button" aria-label="Previous screenshot">‹</button><div class="lab-lightbox-viewport" tabindex="0" aria-label="Zoomed screenshot, scroll to explore"><img class="lab-lightbox-image" alt=""></div><button class="lab-lightbox-arrow lab-lightbox-next" type="button" aria-label="Next screenshot">›</button></div><div class="lab-lightbox-hint">Use + / − to zoom, drag to pan · ← / → to browse · Esc to close</div></div>';
   overlay.addEventListener('click',event=>{if(event.target===overlay)closeLabGallery();});
   overlay.querySelector('.lab-lightbox-close').addEventListener('click',closeLabGallery);
   overlay.querySelector('.lab-lightbox-prev').addEventListener('click',()=>moveLabGallery(-1));
   overlay.querySelector('.lab-lightbox-next').addEventListener('click',()=>moveLabGallery(1));
+   overlay.querySelector('.lab-lightbox-zoom-in').addEventListener('click',()=>setLabGalleryZoom(labGalleryState.zoom+0.5));
+   overlay.querySelector('.lab-lightbox-zoom-out').addEventListener('click',()=>setLabGalleryZoom(labGalleryState.zoom-0.5));
+   overlay.querySelector('.lab-lightbox-zoom-reset').addEventListener('click',()=>setLabGalleryZoom(1));
+   const viewport=overlay.querySelector('.lab-lightbox-viewport');
+   viewport.addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey){e.preventDefault();setLabGalleryZoom(labGalleryState.zoom+(e.deltaY<0?0.25:-0.25));}},{passive:false});
+   let dragging=false,startX=0,startY=0,left=0,top=0;
+   viewport.addEventListener('pointerdown',e=>{if(!labGalleryState||labGalleryState.zoom===1)return;dragging=true;startX=e.clientX;startY=e.clientY;left=viewport.scrollLeft;top=viewport.scrollTop;viewport.setPointerCapture(e.pointerId);viewport.style.cursor='grabbing';});
+   viewport.addEventListener('pointermove',e=>{if(dragging){viewport.scrollLeft=left-(e.clientX-startX);viewport.scrollTop=top-(e.clientY-startY);}});
+   const endDrag=()=>{dragging=false;viewport.style.cursor='grab';};viewport.addEventListener('pointerup',endDrag);viewport.addEventListener('pointercancel',endDrag);
   const oldOverflow=document.body.style.overflow;
   document.body.appendChild(overlay);document.body.style.overflow='hidden';
-  labGalleryState={overlay,shots,index,returnFocus,oldOverflow};
+  labGalleryState={overlay,shots,index,returnFocus,oldOverflow,zoom:1};
   updateLabGallery();document.addEventListener('keydown',onLabGalleryKey);
   overlay.querySelector('.lab-lightbox-close').focus();
 }
