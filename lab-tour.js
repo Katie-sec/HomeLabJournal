@@ -27,8 +27,8 @@ function showRegisterGallery(){
   section.className='lab-register-gallery';
   section.innerHTML='<div class="eyebrow">REAL HOME-LAB WORKBOOK SCREENSHOTS</div><p class="lab-gallery-intro">Selected screenshots from my home-lab Threat Hunt Register. Click an image to view it at full size.</p>';
   const shots=[
-    ['assets/threat-hunt-register/overview-1.png','Overview & Standards · Part 1','Workbook structure, automation and review procedure'],
-    ['assets/threat-hunt-register/overview-2.png','Overview & Standards · Part 2','Query maintenance, triage and analyst responsibilities'],
+    ['assets/threat-hunt-register/overview-1.png','Workbook Architecture & Analyst Procedures','Workbook structure, automation and review procedure'],
+    ['assets/threat-hunt-register/overview-2.png','Query Maintenance & Operational Standards','Query maintenance, triage and analyst responsibilities'],
     ['assets/threat-hunt-register/catalogue.png','Query Catalogue','Hunt definitions, data sources and proposed ATT&CK mappings'],
     ['assets/threat-hunt-register/weekly-log.png','Weekly Hunt Data Log','Automated results, zero-match notes and highlighted findings']
   ];
