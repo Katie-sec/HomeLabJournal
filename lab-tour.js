@@ -25,6 +25,58 @@ function richLabText(value){
   }
   return wrapper.outerHTML;
 }
+// Image viewer lives inside the page: keyboard arrows, Escape and backdrop close.
+let labGalleryState=null;
+function closeLabGallery(){
+  if(!labGalleryState)return;
+  const {overlay,returnFocus,oldOverflow}=labGalleryState;
+  overlay.remove();document.body.style.overflow=oldOverflow;
+  labGalleryState=null;
+  document.removeEventListener('keydown',onLabGalleryKey);
+  if(returnFocus && returnFocus.isConnected)returnFocus.focus();
+}
+function onLabGalleryKey(event){
+  if(!labGalleryState)return;
+  if(event.key==='Escape'){event.preventDefault();closeLabGallery();}
+  else if(event.key==='ArrowRight'){event.preventDefault();moveLabGallery(1);}
+  else if(event.key==='ArrowLeft'){event.preventDefault();moveLabGallery(-1);}
+  else if(event.key==='Tab'){
+    const buttons=[...labGalleryState.overlay.querySelectorAll('button')];
+    const first=buttons[0],last=buttons[buttons.length-1];
+    if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
+    else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
+  }
+}
+function moveLabGallery(delta){
+  if(!labGalleryState)return;
+  labGalleryState.index=(labGalleryState.index+delta+labGalleryState.shots.length)%labGalleryState.shots.length;
+  updateLabGallery();
+}
+function updateLabGallery(){
+  const s=labGalleryState;
+  if(!s)return;
+  const [src,title]=s.shots[s.index];
+  s.overlay.querySelector('.lab-lightbox-image').src=src;
+  s.overlay.querySelector('.lab-lightbox-image').alt=title+' screenshot';
+  s.overlay.querySelector('.lab-lightbox-title').textContent=title;
+  s.overlay.querySelector('.lab-lightbox-count').textContent=(s.index+1)+' of '+s.shots.length;
+}
+function openLabGallery(shots,index,returnFocus){
+  closeLabGallery();
+  const overlay=document.createElement('div');
+  overlay.className='lab-lightbox';overlay.setAttribute('role','dialog');
+  overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','Workbook screenshot viewer');
+  overlay.innerHTML='<div class="lab-lightbox-panel"><div class="lab-lightbox-bar"><strong class="lab-lightbox-title"></strong><span class="lab-lightbox-count"></span><button class="lab-lightbox-close" type="button" aria-label="Close image viewer">✕</button></div><div class="lab-lightbox-stage"><button class="lab-lightbox-arrow lab-lightbox-prev" type="button" aria-label="Previous screenshot">‹</button><img class="lab-lightbox-image" alt=""><button class="lab-lightbox-arrow lab-lightbox-next" type="button" aria-label="Next screenshot">›</button></div><div class="lab-lightbox-hint">Use ← and → to browse · Esc to close</div></div>';
+  overlay.addEventListener('click',event=>{if(event.target===overlay)closeLabGallery();});
+  overlay.querySelector('.lab-lightbox-close').addEventListener('click',closeLabGallery);
+  overlay.querySelector('.lab-lightbox-prev').addEventListener('click',()=>moveLabGallery(-1));
+  overlay.querySelector('.lab-lightbox-next').addEventListener('click',()=>moveLabGallery(1));
+  const oldOverflow=document.body.style.overflow;
+  document.body.appendChild(overlay);document.body.style.overflow='hidden';
+  labGalleryState={overlay,shots,index,returnFocus,oldOverflow};
+  updateLabGallery();document.addEventListener('keydown',onLabGalleryKey);
+  overlay.querySelector('.lab-lightbox-close').focus();
+}
 function showRegisterGallery(){
   const target=document.getElementById('labDetail');
   const section=document.createElement('section');
@@ -38,11 +90,12 @@ function showRegisterGallery(){
   ];
   const grid=document.createElement('div');grid.className='lab-gallery-grid';
   for(const [src,title,desc] of shots){
-    const a=document.createElement('a');a.href=src;a.target='_blank';a.rel='noopener noreferrer';a.className='lab-gallery-item';
+    const button=document.createElement('button');button.type='button';button.className='lab-gallery-item lab-gallery-open';
+    button.setAttribute('aria-label','View '+title+' screenshot');
     const img=document.createElement('img');img.src=src;img.alt=title+' screenshot';img.loading='lazy';
     const label=document.createElement('strong');label.textContent=title;
     const note=document.createElement('small');note.textContent=desc;
-    a.append(img,label,note);grid.appendChild(a);
+    button.append(img,label,note);button.addEventListener('click',()=>openLabGallery(shots,shots.findIndex(s=>s[0]===src),button));grid.appendChild(button);
   }
   section.appendChild(grid);target.appendChild(section);
 }
