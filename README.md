@@ -4,6 +4,7 @@ This repository documents my personal IT and cybersecurity home lab projects, wi
 I originally started this journal to record what I was learning as I explored Microsoft Azure and Microsoft 365. Since then, it's developed into a collection of practical security projects where I can experiment with new technologies, troubleshoot problems and apply concepts I've encountered in my professional work.
 
 My aim is to document not just what I've built, but why I've built it, how it works and what I've learned along the way.
+
 ---
 
 ## Skills Demonstrated
