@@ -111,7 +111,7 @@
     // The user can still drag any column wider or narrower.
     const defaults = {
       hunts: [440, 110],
-      watchlist: [270, 130, 260, 410, 155],
+      watchlist: [300, 150, 330, 690, 205],
       excel: [48, 160, 330, 150, 135, 690, 170, 300, 195]
     };
     const widths = headers.map((th,i)=>saved[i] || defaults[key]?.[i] || 160);
