@@ -14,7 +14,7 @@ const labCopy = {
     {
       "title": "Scheduled / manual trigger",
       "short": "Start a hunting cycle",
-      "purpose": "The Logic App begins on a configured recurrence or a manual run during testing.",
+      "purpose": "In both the production environment at work and my personal home lab, I've configured the Logic App to run automatically every Monday at 9:00 AM. This kicks off the weekly threat hunts without anyone needing to start them manually.",
       "input": "Recurrence schedule or manual trigger",
       "output": "A new workflow execution",
       "why": "A repeatable schedule helps prevent hunts from relying on an analyst remembering to run each query.",
