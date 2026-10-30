@@ -403,12 +403,12 @@ This allowed the automation to retrieve the appropriate reporting information fo
 [Screenshot 6 — Watchlist CSV]
 Figure 6: The CSV containing standardised review information and predefined notes for the ten hunting scenarios.
 
-<img width="1553" height="364" alt="image" src="https://github.com/user-attachments/assets/af44d060-7cc8-46c0-a58e-1fda75b5fb96" />
+<img width="1888" height="221" alt="image" src="https://github.com/user-attachments/assets/dcc6b19f-a6a5-4688-afff-2b3e93be6d4e" />
 
 [Screenshot 7 — Completed Sentinel Watchlist]
 Figure 7: The watchlist successfully imported into Microsoft Sentinel.
 
-<img width="1899" height="875" alt="image" src="https://github.com/user-attachments/assets/141b093e-e19d-4559-9fb6-798400df9a57" />
+<img width="1909" height="731" alt="image" src="https://github.com/user-attachments/assets/4e7cacfd-e149-4308-86d3-1388856a5ccd" />
 
 ### Building the Threat Hunt Register
 
@@ -572,8 +572,9 @@ That led me to my next project.
 
 **Project 7 — Interactive Threat Hunting Simulation & Analytics Platform.**
 
-## Project Resources
-**Interactive demonstration:** https://threathunting.homelab-sec.com/
-**GitHub portfolio:** https://github.com/Katie-sec/HomeLabJournal
-**Environment:** Personal Microsoft Azure and Microsoft 365 home lab
-**Important:** The home-lab implementation is separate from my employer's production environment. No employer or customer security data is included.
+| Resource | Details |
+|:---|:---|
+| **Interactive demonstration** | https://threathunting.homelab-sec.com/ |
+| **GitHub portfolio** | https://github.com/Katie-sec/HomeLabJournal |
+| **Environment** | Personal Microsoft Azure and Microsoft 365 home lab |
+| **Important** | The home-lab implementation is separate from my employer's production environment. No employer or customer security data is included. |
