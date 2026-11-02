@@ -47,7 +47,13 @@ The lab brings together Microsoft Sentinel, Azure Log Analytics, KQL, Sentinel w
 
 I also developed an interactive website to demonstrate the architecture and show how the different components work together, including a simulated automation run and screenshots from my actual home-lab environment.
 
-🔗 [Explore the Interactive Threat Hunting Lab](https://threathunting.homelab-sec.com/)
+[Project 7: Interactive Threat Hunting Simulation & Analytics Platform](Project-7-Interactive-Threat-Hunting-Simulation.md)
+
+Built an interactive, AI-assisted website to demonstrate my Microsoft Sentinel threat-hunting workflow without exposing my Azure environment.
+
+The platform includes simulated automation, guided investigation scenarios and a private Cloudflare D1 analytics dashboard, with Telegram notifications when simulations are completed.
+
+🔗 [Explore the Interactive Threat Hunting Simulation](https://threathunting.homelab-sec.com/)
 
 ## What I'm Working Towards
 
