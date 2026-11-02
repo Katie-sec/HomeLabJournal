@@ -544,7 +544,7 @@ However… as I began thinking about how to share this project, I realised that 
 
 That led me to my next project.
 
-**Project 7 — Interactive Threat Hunting Simulation & Analytics Platform.**
+**[Project 7 — Interactive Threat Hunting Simulation & Analytics Platform](Project-7-Interactive-Threat-Hunting-Simulation.md)**
 
 | Resource | Details |
 |:---|:---|
